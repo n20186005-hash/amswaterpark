@@ -1,0 +1,79 @@
+---
+import { site } from "../data/site";
+import { content, type Language } from "../data/content";
+
+interface Props { lang: Language; }
+const { lang } = Astro.props;
+const c = content[lang];
+const otherHref = lang === "id" ? "/en/" : "/";
+const legalHref = (slug: string) => lang === "id" ? `/${slug}/` : `/en/${slug}/`;
+const pagePath = lang === "id" ? "/" : "/en/";
+const pageUrl = Astro.site ? new URL(pagePath, Astro.site).href : undefined;
+const attractionLd = {
+  "@context": "https://schema.org",
+  "@type": ["TouristAttraction", "LocalBusiness"],
+  name: site.name,
+  description: c.description,
+  address: { "@type": "PostalAddress", streetAddress: "Villa Tomang Baru Square, Jl. Villa Tomang Baru No.1", addressLocality: "Kuta Jaya, Pasar Kemis", addressRegion: "Banten", postalCode: "15561", addressCountry: "ID" },
+  geo: { "@type": "GeoCoordinates", latitude: site.latitude, longitude: site.longitude },
+  telephone: site.phone,
+  openingHours: site.openingHours,
+  aggregateRating: { "@type": "AggregateRating", ratingValue: site.reviewRating, reviewCount: site.reviewCount, bestRating: 5, worstRating: 1 },
+  ...(pageUrl ? { url: pageUrl } : {})
+};
+const faqLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: c.faqs.map(([name, text]) => ({ "@type": "Question", name, acceptedAnswer: { "@type": "Answer", text } })) };
+const photos = [
+  [site.images.entrance, c.photoCredits[0]], [site.images.kidsPool, c.photoCredits[1]], [site.images.pool, c.photoCredits[2]], [site.images.windmill, c.photoCredits[3]]
+];
+---
+<script is:inline type="application/ld+json" set:html={JSON.stringify(attractionLd)} />
+<script is:inline type="application/ld+json" set:html={JSON.stringify(faqLd)} />
+
+<main id="top" class="overflow-x-hidden">
+  <header class="sticky top-0 z-40 border-b border-canal/10 bg-white/90 backdrop-blur">
+    <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 lg:px-8">
+      <a href="#top" class="flex items-center gap-3 text-ink no-underline">
+        <img src="/favicon.svg" alt="" class="h-11 w-11" />
+        <span><strong class="block font-display text-xl leading-none">Amsterdam Waterpark</strong><span class="mt-1 block text-[.62rem] font-extrabold tracking-[.17em] text-canal">{c.guideMark}</span></span>
+      </a>
+      <nav class="hidden items-center gap-5 xl:flex" aria-label={c.navigationAria}>
+        {c.nav.map((item, index) => <a href={["#top", "#plan", "#experience", "#access", "#practical", "#faq"][index]} class="text-xs font-bold text-ink/75 no-underline hover:text-canal">{item}</a>)}
+      </nav>
+      <a href={otherHref} class="inline-flex items-center gap-2 rounded-full border border-canal/20 bg-skywash px-4 py-2 text-xs font-extrabold text-canal no-underline">◎ {c.languageSwitch}</a>
+    </div>
+  </header>
+
+  <section class="relative isolate overflow-hidden bg-skywash px-5 py-16 lg:px-8 lg:py-24">
+    <div class="waterline absolute inset-0 -z-10 opacity-70"></div>
+    <div class="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[.92fr_1.08fr]">
+      <div class="rise max-w-2xl">
+        <div class="flex flex-wrap gap-2"><span class="status">● {c.tagVerified}</span><span class="status border-sunorange/40 bg-orange-50 text-sunorange">◌ {c.tagDynamic}</span></div>
+        <p class="mt-8 text-[.68rem] font-extrabold tracking-[.18em] text-canal">{c.eyebrow}</p>
+        <h1 class="mt-4 whitespace-pre-line font-display text-6xl leading-[.88] tracking-tight text-ink md:text-8xl">{c.heroTitle}</h1>
+        <p class="mt-7 max-w-xl text-lg leading-8 text-ink/75">{c.heroLead}</p>
+        <div class="mt-8 flex flex-wrap gap-3"><a href={site.mapsUrl} target="_blank" rel="noreferrer" class="bg-canal px-5 py-4 text-sm font-extrabold text-white no-underline shadow-lg shadow-canal/20 hover:bg-ink">{c.maps} ↗</a><a href="#plan" class="border border-canal/25 bg-white px-5 py-4 text-sm font-extrabold text-canal no-underline hover:border-canal">{c.plan} ↓</a></div>
+      </div>
+      <figure class="rise relative m-0 lg:pl-8"><div class="absolute -left-2 -top-2 h-28 w-28 border-l-8 border-t-8 border-sunorange"></div><img src={site.images.entrance} alt="Pemandangan pintu masuk Amsterdam Waterpark dengan landmark kincir angin" class="photo-shift aspect-[4/3] w-full object-cover shadow-2xl shadow-canal/20" loading="eager" /><figcaption class="photo-credit mt-2">{c.photoCredits[0]}</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="bg-ink px-5 py-20 text-white lg:px-8"><div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[.8fr_1.2fr]"><div><p class="text-[.68rem] font-extrabold tracking-[.18em] text-skywash">{c.factsMeta}</p><h2 class="mt-4 font-display text-5xl leading-[.95]">{c.factTitle}</h2><p class="mt-6 max-w-md leading-7 text-white/75">{c.factLead}</p><p class="mt-8 border-l-2 border-sunorange pl-4 text-sm leading-6 text-white/70">{c.factNote}</p></div><div class="border-t border-white/20">{c.facts.map(([label, value], index) => <div class="grid gap-3 border-b border-white/20 py-5 md:grid-cols-[180px_1fr]"><span class="text-[.68rem] font-extrabold tracking-[.12em] text-skywash">0{index + 1} / {label.toUpperCase()}</span><span class="leading-6">{value}</span></div>)}</div></div></section>
+
+  <section id="plan" class="scroll-mt-20 px-5 py-20 lg:px-8 lg:py-28"><div class="mx-auto max-w-7xl"><p class="text-[.68rem] font-extrabold tracking-[.18em] text-canal">{c.planEyebrow}</p><div class="mt-5 grid gap-8 lg:grid-cols-[1fr_.65fr]"><h2 class="max-w-3xl font-display text-5xl leading-[.95] text-ink md:text-7xl">{c.planTitle}</h2><p class="self-end border-l-2 border-sunorange pl-5 leading-7 text-ink/70">{c.factNote}</p></div><div class="mt-14 grid gap-px overflow-hidden border border-canal/15 bg-canal/15 md:grid-cols-2">{c.planCards.map(([title, detail], index) => <article class="relative bg-white p-7 lg:p-9"><span class="text-sm font-extrabold text-sunorange">0{index + 1}</span><h3 class="mt-6 font-display text-3xl text-ink">{title}</h3><p class="mt-3 text-sm leading-7 text-ink/70">{detail}</p></article>)}</div></div></section>
+
+  <section id="experience" class="scroll-mt-20 bg-canal px-5 py-20 text-white lg:px-8 lg:py-28"><div class="mx-auto max-w-7xl"><div class="grid gap-8 lg:grid-cols-[.8fr_1.2fr]"><div><p class="text-[.68rem] font-extrabold tracking-[.18em] text-skywash">{c.experienceEyebrow}</p><h2 class="mt-4 font-display text-5xl leading-[.95] md:text-7xl">{c.experienceTitle}</h2></div><p class="self-end max-w-2xl text-lg leading-8 text-white/80">{c.experienceLead}</p></div><div class="mt-14 grid gap-6 md:grid-cols-3">{c.experienceCards.map(([title, detail], index) => <article class="border-t border-white/35 pt-6"><span class="text-sm font-extrabold text-sunorange">0{index + 1}</span><h3 class="mt-6 font-display text-3xl">{title}</h3><p class="mt-3 text-sm leading-7 text-white/80">{detail}</p></article>)}</div><div class="mt-14 grid gap-5 md:grid-cols-3"><figure class="m-0 overflow-hidden"><img src={photos[1][0]} alt="Area permainan air anak di Amsterdam Waterpark" class="photo-shift aspect-[3/4] h-full w-full object-cover" loading="lazy" /><figcaption class="photo-credit bg-white px-3 py-2">{photos[1][1]}</figcaption></figure><figure class="m-0 overflow-hidden"><img src={photos[2][0]} alt="Kolam dan area permainan di Amsterdam Waterpark" class="photo-shift aspect-[3/4] h-full w-full object-cover" loading="lazy" /><figcaption class="photo-credit bg-white px-3 py-2">{photos[2][1]}</figcaption></figure><figure class="m-0 overflow-hidden"><img src={photos[3][0]} alt="Kincir angin dan area kolam Amsterdam Waterpark" class="photo-shift aspect-[3/4] h-full w-full object-cover" loading="lazy" /><figcaption class="photo-credit bg-white px-3 py-2">{photos[3][1]}</figcaption></figure></div></div></section>
+
+  <section id="access" class="scroll-mt-20 px-5 py-20 lg:px-8 lg:py-28"><div class="mx-auto max-w-7xl"><p class="text-[.68rem] font-extrabold tracking-[.18em] text-canal">{c.accessEyebrow}</p><div class="mt-5 grid gap-8 lg:grid-cols-[1fr_.72fr]"><h2 class="font-display text-5xl leading-[.95] text-ink md:text-7xl">{c.accessTitle}</h2><p class="self-end text-lg leading-8 text-ink/70">{c.accessLead}</p></div><div class="mt-14 grid gap-px overflow-hidden border-y border-canal/20 md:grid-cols-2">{c.accessCards.map(([title, detail], index) => <article class="border-b border-canal/20 p-7 md:border-r md:p-9"><span class="text-sm font-extrabold text-sunorange">0{index + 1}</span><h3 class="mt-6 font-display text-3xl text-ink">{title}</h3><p class="mt-3 text-sm leading-7 text-ink/70">{detail}</p></article>)}</div></div></section>
+
+  <section id="practical" class="scroll-mt-20 bg-orange-50 px-5 py-20 lg:px-8 lg:py-28"><div class="mx-auto max-w-7xl"><p class="text-[.68rem] font-extrabold tracking-[.18em] text-sunorange">{c.practicalEyebrow}</p><h2 class="mt-4 max-w-3xl font-display text-5xl leading-[.95] text-ink md:text-7xl">{c.practicalTitle}</h2><div class="mt-14 grid gap-x-10 border-t border-sunorange/25 md:grid-cols-2 xl:grid-cols-3">{c.practicalCards.map(([title, detail], index) => <article class="border-b border-sunorange/25 py-7"><span class="text-sm font-extrabold text-sunorange">0{index + 1}</span><h3 class="mt-5 font-display text-3xl text-ink">{title}</h3><p class="mt-3 text-sm leading-7 text-ink/70">{detail}</p></article>)}</div></div></section>
+
+  <section class="px-5 py-20 lg:px-8"><div class="mx-auto grid max-w-7xl overflow-hidden bg-skywash lg:grid-cols-[.8fr_1.2fr]"><div class="p-8 lg:p-14"><p class="text-[.68rem] font-extrabold tracking-[.18em] text-canal">{c.mapEyebrow}</p><h2 class="mt-4 font-display text-5xl leading-[.95] text-ink">{c.mapTitle}</h2><p class="mt-6 max-w-md leading-7 text-ink/70">{c.mapLead}</p><a href={site.mapsUrl} target="_blank" rel="noreferrer" class="mt-8 inline-flex bg-canal px-5 py-4 text-sm font-extrabold text-white no-underline hover:bg-ink">{c.maps} ↗</a></div><iframe title="Amsterdam Waterpark map" src={site.mapEmbedUrl} class="min-h-[400px] w-full border-0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></section>
+
+  <section id="faq" class="scroll-mt-20 px-5 py-20 lg:px-8 lg:py-28"><div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[.7fr_1.3fr]"><div><p class="text-[.68rem] font-extrabold tracking-[.18em] text-canal">{c.faqEyebrow}</p><h2 class="mt-4 font-display text-5xl leading-[.95] text-ink md:text-6xl">{c.faqTitle}</h2></div><div class="border-t border-canal/20">{c.faqs.map(([question, answer], index) => <details class="group border-b border-canal/20 py-5" open={index === 0}><summary class="flex cursor-pointer list-none items-center gap-4 font-display text-2xl leading-tight text-ink md:text-3xl"><span class="font-sans text-sm font-extrabold text-sunorange">0{index + 1}</span><span class="flex-1">{question}</span><span class="font-sans text-canal group-open:rotate-45">+</span></summary><p class="mt-4 pl-8 text-sm leading-7 text-ink/70">{answer}</p></details>)}</div></div></section>
+
+  <section class="bg-ink px-5 py-20 text-white lg:px-8"><div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_.7fr]"><div><p class="text-[.68rem] font-extrabold tracking-[.18em] text-skywash">{c.feedbackEyebrow}</p><h2 class="mt-4 max-w-3xl font-display text-5xl leading-[.95] md:text-7xl">{c.feedbackTitle}</h2><p class="mt-6 max-w-2xl text-lg leading-8 text-white/75">{c.feedbackLead}</p></div><a href={`mailto:${site.feedbackEmail}?subject=Amsterdam%20Waterpark%20guide%20feedback`} class="self-end border border-white/25 bg-white/10 p-7 text-white no-underline hover:bg-white/15"><span class="block text-sm font-extrabold tracking-wide text-skywash">{site.feedbackEmail}</span><span class="mt-8 flex items-end justify-between font-display text-3xl">{c.feedback}<span>↗</span></span></a></div></section>
+
+  <section class="px-5 py-16 lg:px-8"><div class="mx-auto max-w-7xl"><p class="text-[.68rem] font-extrabold tracking-[.18em] text-canal">{c.sourcesMeta}</p><h2 class="mt-3 font-display text-4xl text-ink">{c.sourceTitle}</h2><p class="mt-5 max-w-4xl leading-7 text-ink/70">{c.sourceLead}</p><div class="mt-8 grid gap-3 md:grid-cols-4">{[site.sources.maps, site.sources.tickets, site.sources.instagram, site.sources.reviews].map((source, index) => <a href={source} target="_blank" rel="noreferrer" class="border border-canal/20 p-4 text-sm font-bold text-canal no-underline hover:border-canal hover:bg-skywash">{c.sourceLabels[index]} ↗<span class="mt-2 block text-xs font-normal text-ink/60">{c.sources[index]}</span></a>)}</div></div></section>
+
+  <footer class="border-t border-canal/10 bg-white px-5 py-12 lg:px-8"><div class="mx-auto grid max-w-7xl gap-8 md:grid-cols-[1.2fr_.8fr_.5fr]"><div><div class="flex items-center gap-3"><img src="/favicon.svg" alt="" class="h-11 w-11" /><span class="font-display text-2xl text-ink">Amsterdam Waterpark</span></div><p class="mt-5 max-w-lg text-sm leading-6 text-ink/70">{c.footer}</p><p class="mt-3 text-xs leading-5 text-ink/55">{c.footerNote}</p></div><div><p class="text-[.68rem] font-extrabold tracking-[.16em] text-canal">{c.legalMeta}</p><div class="mt-4 grid gap-3 text-sm font-bold">{["privacy", "terms", "cookies"].map((slug, index) => <a href={legalHref(slug)} class="text-ink no-underline hover:text-canal">{c.legal[index]}</a>)}</div></div><div><p class="text-[.68rem] font-extrabold tracking-[.16em] text-canal">{c.informationMeta}</p><p class="mt-4 text-xs leading-5 text-ink/55">{c.copyright}</p></div></div></footer>
+</main>

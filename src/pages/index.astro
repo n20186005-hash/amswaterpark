@@ -1,0 +1,6 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Guide from "../components/Guide.astro";
+import { content } from "../data/content";
+---
+<BaseLayout title={content.id.title} description={content.id.description} lang="id" path="/"><Guide lang="id" /></BaseLayout>

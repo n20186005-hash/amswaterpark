@@ -49,3 +49,17 @@
 | 印尼语 | 导航、机场/铁路/公交/出租车四段交通、八类实用服务、Pasar Kemis 与 Kuta Jaya 行政背景及八项 FAQ 均显示为印尼语；未发现英文界面文本残留。 |
 
 结论：双语切换已覆盖本次新增内容；界面层不存在中英混排。地名、原始地址、地图分类与机构名称按事实保留。
+
+## 用户素材链接复核：地点身份与内容边界
+
+用户提供的 Google Maps 查询“Villa Tomang Baru Square, Jl. Villa Tomang Baru No.1”并未返回一个名为“Villa Tomang Baru Square”的独立旅游景点。结果中可核对的候选地点包括：`Villa Tomang Baru`（地图分类为 gated community，4.4 / 5，257 条公开评价，坐标 -6.1545721、106.5812535）以及 `Tomang baru`（地图分类为 housing development，4.8 / 5，12 条公开评价）。因此，后续重构不能虚构一个名为“Square”的游乐园、水上乐园或可售票景点；应以地图实际记录的住宅社区为事实基础，或在用户补充明确的目标场地后再更换主体。
+
+用户提供的 iframe 指向 **Amsterdam Waterpark**，与上述地图查询的 Villa Tomang Baru 并不一致，且带有中文/日文地区参数。它不能作为 Villa Tomang Baru 的地点地图直接嵌入。重构时将只采用与 Villa Tomang Baru 坐标一致、`hl=id` 的印尼语地图嵌入，或将该差异列为待用户确认事项。
+
+## Amsterdam Waterpark：文件内嵌地图与公开资料核验
+
+用户文件中提供的 `maps.app.goo.gl/4hNdrBTz146SetbF9` 实际解析为 **Amsterdam Waterpark**，与“Villa Tomang Baru Square, Jl. Villa Tomang Baru No.1, Kuta Jaya, Kec. Ps. Kemis, Kabupaten Tangerang, Banten 15561”对应。Google Maps 将其分类为水上乐园，展示坐标 **-6.1582786, 106.5835666**、电话 **+62 21 5924434**、地图评分 **4.2 / 5（5,438 条评价）**，并显示当天状态为“开放，17:00 关闭”。这些字段应以动态资料呈现，网站不能把它们宣称为永久不变的承诺。[Google Maps](https://maps.app.goo.gl/4hNdrBTz146SetbF9)
+
+Traveloka 的票务页显示同一地点地址，并展示“工作日入场券”起始售价 **Rp35.000**。此价格是第三方平台的实时商品信息，重构后的“费用”板块将采用“平台显示起价 / 出行前确认”的表达，不会把它写成乐园固定门票。[Traveloka](https://www.traveloka.com/id-id/activities/indonesia/product/i-amsterdam-waterpark-tickets-2000819440972)
+
+官方 Instagram 简介将自身描述为荷兰城市主题水上乐园，并公开电话及 WhatsApp 联系方式。它可以用作经营主体和实时活动信息的核对入口；网站会保持独立、非官方表述，不复用其短期促销、票价或未经授权的商业照片。<https://www.instagram.com/iamsterdamwaterpark/>

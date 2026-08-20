@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Amsterdam Waterpark mark">
+  <rect width="64" height="64" rx="14" fill="#e8f7ff"/>
+  <path d="M32 10v26M18 22l28 20M46 22 18 42M16 26l16 10 16-10" fill="none" stroke="#0B5EA8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M13 47c6-5 12 5 19 0s13 5 19 0" fill="none" stroke="#F47A36" stroke-width="4" stroke-linecap="round"/>
+</svg>
