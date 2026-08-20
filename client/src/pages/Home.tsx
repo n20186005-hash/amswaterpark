@@ -10,11 +10,11 @@ import { SITE_NAME, SITE_URL } from "@/const";
 type Language = "id" | "en";
 
 const assets = {
-  logo: "/manus-storage/villa-tomang-logo_bac7b5d9.png",
-  pattern: "/manus-storage/villa-tomang-pattern_7dd76a02.png",
-  walkway: "/manus-storage/villa-tomang-walkway_8ff30c4b.png",
-  amenities: "/manus-storage/villa-tomang-amenities_181a7fe1.png",
-  wayfinding: "/manus-storage/villa-tomang-wayfinding_a8196793.png",
+  logo: "/villa-tomang-logo.png",
+  pattern: "/villa-tomang-pattern.png",
+  walkway: "/villa-tomang-walkway.png",
+  amenities: "/villa-tomang-amenities.png",
+  wayfinding: "/villa-tomang-wayfinding.png",
 };
 
 const mapUrl = "https://www.google.com/maps/search/?api=1&query=Villa%20Tomang%20Baru%2C%20Jl.%20Villa%20Tomang%20Baru%2C%20Kuta%20Jaya%2C%20Pasar%20Kemis%2C%20Tangerang%2C%20Banten%2015560%2C%20Indonesia";
