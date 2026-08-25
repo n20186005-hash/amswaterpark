@@ -20,9 +20,9 @@ export const site = {
     reviews: "https://www.tripadvisor.co.id/Attraction_Review-g1493703-d8754895-Reviews-I_Amsterdam_Waterpark-Tangerang_Banten_Province_Java.html"
   },
   images: {
-    entrance: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663310217349/mhyzoBwAHaxZuLoJ.jpeg",
-    kidsPool: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663310217349/RnjHtXmzWSKxGzKk.jpg",
-    pool: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663310217349/XMLlXCHMaLbhJhUjp.jpg",
-    windmill: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663310217349/wOviFVMlehZIbPSh.jpg"
+    entrance: "/entrance-traveloka.jpeg",
+    kidsPool: "/kids-pool-wanderboat.jpg",
+    pool: "/pool-tripadvisor.jpg",
+    windmill: "/windmill-tripadvisor.jpg"
   }
 } as const;
