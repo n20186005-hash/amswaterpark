@@ -6,6 +6,11 @@
 dist/
 build/
 *.dist
+.wrangler/
+.wrangler-tmp/
+.dev.vars
+.astro/
+worker-env/
 
 # Environment variables
 .env

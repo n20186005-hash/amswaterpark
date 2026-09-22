@@ -1,0 +1,127 @@
+---
+import { content, type Language } from "../data/content";
+
+interface Props { lang: Language; }
+const { lang } = Astro.props;
+const c = content[lang];
+---
+<section id="weather" class="scroll-mt-20 px-5 py-20 lg:px-8 lg:py-28">
+  <div class="mx-auto max-w-7xl">
+    <p class="text-[.68rem] font-extrabold tracking-[.18em] text-canal">{c.weatherEyebrow}</p>
+    <h2 class="mt-4 max-w-3xl font-display text-5xl leading-[.95] text-ink md:text-7xl">{c.weatherTitle}</h2>
+    <p class="mt-6 max-w-3xl text-lg leading-8 text-ink/70">{c.weatherLead}</p>
+    <div id="weather-widget" class="mt-12" data-lang={lang}>
+      <div class="rounded-2xl border border-canal/15 bg-skywash p-6 text-ink/60">…</div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const widget = document.getElementById("weather-widget");
+  if (widget) {
+    const el = widget;
+    const lang = widget.getAttribute("data-lang") === "en" ? "en" : "id";
+    const t = {
+      id: {
+        loading: "Memuat…",
+        error: "Cuaca belum bisa ditampilkan saat ini. Cek kembali nanti.",
+        current: "Sekarang",
+        feels: "Terasa seperti",
+        humidity: "Kelembapan",
+        wind: "Angin",
+        rain: "Hujan",
+        forecast: "Prakiraan beberapa hari",
+        umbrellaYes: "Siang hari: bawa payung atau jas hujan.",
+        umbrellaNo: "Peluang hujan rendah; nikmati kunjungan.",
+        sunYes: "Matahari terik: gunakan pelindung matahari & minum cukup.",
+        mon: ["Sen", "Sel", "Rab", "Kam", "Jum", "Sab", "Min"]
+      },
+      en: {
+        loading: "Loading…",
+        error: "Weather is unavailable right now. Please check back later.",
+        current: "Now",
+        feels: "Feels like",
+        humidity: "Humidity",
+        wind: "Wind",
+        rain: "Rain",
+        forecast: "Next few days",
+        umbrellaYes: "By day: bring an umbrella or rain shell.",
+        umbrellaNo: "Low rain chance; enjoy your visit.",
+        sunYes: "Strong sun: use sun protection & drink enough water.",
+        mon: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+      }
+    }[lang];
+
+    const WMO: Record<number, [string, string]> = {
+      0: ["☀️", "Cerah"], 1: ["🌤️", "Cerah berawan"], 2: ["⛅", "Berawan sebagian"], 3: ["☁️", "Mendung"],
+      45: ["🌫️", "Kabut"], 48: ["🌫️", "Kabut beku"],
+      51: ["🌦️", "Gerimis ringan"], 53: ["🌦️", "Gerimis"], 55: ["🌧️", "Gerimis lebat"],
+      56: ["🌧️", "Gerimis beku"], 57: ["🌧️", "Gerimis beku"],
+      61: ["🌧️", "Hujan ringan"], 63: ["🌧️", "Hujan"], 65: ["🌧️", "Hujan lebat"],
+      66: ["🌧️", "Hujan beku"], 67: ["🌧️", "Hujan beku"],
+      71: ["🌨️", "Salju ringan"], 73: ["🌨️", "Salju"], 75: ["🌨️", "Salju lebat"], 77: ["🌨️", "Butir salju"],
+      80: ["🌦️", "Hujan sesekali"], 81: ["🌧️", "Hujan sesekali"], 82: ["⛈️", "Hujan sangat lebat"],
+      85: ["🌨️", "Salju sesekali"], 86: ["🌨️", "Salju lebat"],
+      95: ["⛈️", "Badai petir"], 96: ["⛈️", "Badai petir & hujan es"], 99: ["⛈️", "Badai petir & hujan es"]
+    };
+    const wx = (code: number): [string, string] => WMO[code] || ["🌡️", "—"];
+
+    function render(d: any) {
+      const cur = d.current;
+      const cw = wx(cur.weather_code);
+      const day = d.daily;
+      const rainMax = Math.max(0, ...day.precipitation_probability_max);
+      const hot = cur.apparent_temperature >= 32;
+      const advice = hot ? t.sunYes : (rainMax >= 40 ? t.umbrellaYes : t.umbrellaNo);
+
+      let cards = "";
+      for (let i = 0; i < day.time.length; i++) {
+        const dt = new Date(day.time[i] + "T00:00:00");
+        const label = i === 0 ? t.current : t.mon[dt.getDay()];
+        const fw = wx(day.weather_code[i]);
+        const pop = day.precipitation_probability_max[i];
+        cards += `<div class="flex-1 min-w-[7rem] rounded-xl border border-canal/12 bg-white p-4 text-center">
+          <div class="text-xs font-extrabold tracking-wide text-ink/55">${label}</div>
+          <div class="my-2 text-3xl">${fw[0]}</div>
+          <div class="text-sm font-bold text-ink">${Math.round(day.temperature_2m_max[i])}° / ${Math.round(day.temperature_2m_min[i])}°</div>
+          <div class="mt-1 text-xs text-ink/55">${fw[1]}</div>
+          <div class="mt-1 text-xs font-bold text-canal">${pop}%</div>
+        </div>`;
+      }
+
+      el.innerHTML = `
+        <div class="grid gap-5 lg:grid-cols-[1fr_1.4fr]">
+          <div class="rounded-2xl border border-canal/15 bg-skywash p-7">
+            <div class="text-xs font-extrabold tracking-[.14em] text-canal">${t.current}</div>
+            <div class="mt-3 flex items-center gap-4">
+              <span class="text-6xl">${cw[0]}</span>
+              <span class="font-display text-5xl text-ink">${Math.round(cur.temperature_2m)}°</span>
+            </div>
+            <div class="mt-2 text-lg text-ink/80">${cw[1]}</div>
+            <dl class="mt-5 grid grid-cols-2 gap-3 text-sm">
+              <div><dt class="text-ink/55">${t.feels}</dt><dd class="font-bold text-ink">${Math.round(cur.apparent_temperature)}°</dd></div>
+              <div><dt class="text-ink/55">${t.humidity}</dt><dd class="font-bold text-ink">${cur.relative_humidity_2m}%</dd></div>
+              <div><dt class="text-ink/55">${t.wind}</dt><dd class="font-bold text-ink">${Math.round(cur.wind_speed_10m)} km/j</dd></div>
+              <div><dt class="text-ink/55">${t.rain}</dt><dd class="font-bold text-ink">${Math.round(cur.precipitation)} mm</dd></div>
+            </dl>
+            <p class="mt-5 rounded-xl bg-white/70 p-3 text-sm font-semibold text-ink/80">${advice}</p>
+          </div>
+          <div>
+            <div class="mb-3 text-xs font-extrabold tracking-[.14em] text-canal">${t.forecast}</div>
+            <div class="flex flex-wrap gap-3">${cards}</div>
+          </div>
+        </div>`;
+    }
+
+    async function load() {
+      try {
+        const res = await fetch("/api/weather", { cache: "no-store" });
+        if (!res.ok) throw new Error("bad");
+        render(await res.json());
+      } catch (e) {
+        el.innerHTML = `<div class="rounded-2xl border border-canal/15 bg-skywash p-6 text-ink/60">${t.error}</div>`;
+      }
+    }
+    load();
+  }
+</script>

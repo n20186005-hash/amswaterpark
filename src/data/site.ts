@@ -24,5 +24,16 @@ export const site = {
     kidsPool: "/kids-pool-wanderboat.jpg",
     pool: "/pool-tripadvisor.jpg",
     windmill: "/windmill-tripadvisor.jpg"
-  }
+  },
+  // SEO entity binding (single-attraction schema). Filled from the confirmed listing data.
+  domain: "amswaterpark.com",
+  shortName: "Amsterdam Waterpark",
+  siteName: { id: "Amsterdam Waterpark Tangerang — Panduan Wisata", en: "Amsterdam Waterpark Tangerang — Travel Guide" },
+  city: "Pasar Kemis",
+  stateProvince: "Banten",
+  country: "Indonesia",
+  countryCode: "ID",
+  postalCode: "15561",
+  nearbyLandmarks: ["Boulevard Pasar Kemis", "Tangerang city centre"],
+  govtTourismUrl: "https://bantenprov.go.id"
 } as const;

@@ -1,0 +1,16 @@
+{
+  "name": "Amsterdam Waterpark Visitor Guide",
+  "short_name": "Ams Waterpark",
+  "description": "Independent visitor guide to Amsterdam Waterpark in Pasar Kemis, Banten, Indonesia: location, tickets, hours, facilities, transport, map, and FAQ.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f8fcff",
+  "theme_color": "#0B5EA8",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-192-maskable.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "/icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
