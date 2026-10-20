@@ -196,10 +196,10 @@ export const content = {
       "Akun Instagram belum diverifikasi"
     ],
     "photoCredits": [
-      "Gambar referensi; atribusi lama: Traveloka. Lokasi/tanggal foto dan izin penggunaan belum diverifikasi independen; kondisi kini dapat berbeda.",
-      "Gambar referensi; atribusi lama: Wanderboat. Lokasi/tanggal foto dan izin penggunaan belum diverifikasi independen; kondisi kini dapat berbeda.",
-      "Gambar referensi; atribusi lama: Tripadvisor. Lokasi/tanggal foto dan izin penggunaan belum diverifikasi independen; kondisi kini dapat berbeda.",
-      "Gambar referensi; atribusi lama: Tripadvisor. Lokasi/tanggal foto dan izin penggunaan belum diverifikasi independen; kondisi kini dapat berbeda."
+      "Gambar referensi; atribusi lama: Traveloka. Lokasi dan tanggal foto belum diverifikasi independen; kondisi kini dapat berbeda.",
+      "Gambar referensi; atribusi lama: Wanderboat. Lokasi dan tanggal foto belum diverifikasi independen; kondisi kini dapat berbeda.",
+      "Gambar referensi; atribusi lama: Tripadvisor. Lokasi dan tanggal foto belum diverifikasi independen; kondisi kini dapat berbeda.",
+      "Gambar referensi; atribusi lama: Tripadvisor. Lokasi dan tanggal foto belum diverifikasi independen; kondisi kini dapat berbeda."
     ],
     "footer": "Situs ini adalah panduan informasi pengunjung independen dan non-komersial. Situs tidak berafiliasi dengan Amsterdam Waterpark, pemerintah, atau organisasi resmi mana pun.",
     "footerNote": "Informasi bersumber dari catatan publik dan dapat berubah. Selalu konfirmasi detail penting sebelum bepergian.",
@@ -511,10 +511,10 @@ export const content = {
       "Unverified Instagram account"
     ],
     "photoCredits": [
-      "Reference image; existing attribution: Traveloka. Photo location/date and reuse permission have not been independently verified; current conditions may differ.",
-      "Reference image; existing attribution: Wanderboat. Photo location/date and reuse permission have not been independently verified; current conditions may differ.",
-      "Reference image; existing attribution: Tripadvisor. Photo location/date and reuse permission have not been independently verified; current conditions may differ.",
-      "Reference image; existing attribution: Tripadvisor. Photo location/date and reuse permission have not been independently verified; current conditions may differ."
+      "Reference image; existing attribution: Traveloka. Photo location and date have not been independently verified; current conditions may differ.",
+      "Reference image; existing attribution: Wanderboat. Photo location and date have not been independently verified; current conditions may differ.",
+      "Reference image; existing attribution: Tripadvisor. Photo location and date have not been independently verified; current conditions may differ.",
+      "Reference image; existing attribution: Tripadvisor. Photo location and date have not been independently verified; current conditions may differ."
     ],
     "footer": "This is an independent, non-commercial visitor-information guide. It is not affiliated with Amsterdam Waterpark, government, or any official organisation.",
     "footerNote": "Information is based on public records and can change. Always confirm important details before travelling.",
