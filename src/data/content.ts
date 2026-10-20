@@ -1,228 +1,633 @@
 export const content = {
-  id: {
-    locale: "id-ID",
-    title: "Amsterdam Waterpark Tangerang — Panduan Wisata",
-    description: "Panduan pengunjung independen untuk Amsterdam Waterpark, waterpark bertema Belanda di Tangerang, Banten, Indonesia. Tiket mulai Rp35.000, perosotan air, kolam anak, jam buka, transportasi, peta, dan FAQ.",
-    languageSwitch: "English",
-    guideMark: "PANDUAN PENGUNJUNG / 2026",
-    factsMeta: "00 · FAKTA",
-    sourcesMeta: "SUMBER",
-    legalMeta: "HUKUM",
-    informationMeta: "INFORMASI",
-    navigationAria: "Navigasi utama",
-    breadcrumbAria: "Breadcrumb",
-    nearbyLead: "Saat mengunjungi Amsterdam Waterpark, Anda dapat menjelajahi tempat menarik di sekitar, termasuk",
-    govtLead: "Untuk informasi pariwisata resmi tingkat provinsi, kunjungi",
-    cookieAllowSaved: "Tersimpan: analitik diizinkan.",
-    cookieDeclineSaved: "Tersimpan: analitik ditolak.",
-    nav: ["Beranda", "Cuaca", "Rencanakan", "Wahana", "Akses", "Info kunjungan", "FAQ"],
-    eyebrow: "PANDUAN PENGUNJUNG INDEPENDEN · PASAR KEMIS",
-    heroTitle: `Hari bermain air,
-bernuansa kincir angin.`,
-    heroLead: "Amsterdam Waterpark adalah waterpark bertema kota Belanda di Villa Tomang Baru Square, Kuta Jaya. Gunakan panduan ini untuk menyusun kunjungan, lalu konfirmasi detail dinamis sebelum berangkat.",
-    maps: "Buka Google Maps",
-    plan: "Rencanakan kunjungan",
-    tagVerified: "LOKASI TERKONFIRMASI",
-    tagDynamic: "INFO DINAMIS · CEK SEBELUM BERANGKAT",
-    factTitle: "Informasi inti, dengan batas yang jelas.",
-    factLead: "Data lokasi, nomor telepon, kategori waterpark, rating peta, serta status jam buka berasal dari catatan publik Google Maps. Harga berasal dari halaman pihak ketiga dan dapat berubah.",
-    facts: [["Alamat", "Villa Tomang Baru Square, Jl. Villa Tomang Baru No.1, Kuta Jaya, Pasar Kemis, Tangerang, Banten 15561"], ["Koordinat", "-6.1582786, 106.5835666"], ["Telepon", "+62 21 5924434"], ["Jam yang tampil di peta", "08.00–17.00 · periksa kembali pada hari kunjungan"], ["Rating peta", "4,2 / 5 dari 5.438 ulasan publik*"], ["Tiket pada platform", "mulai Rp35.000 untuk tiket hari kerja*" ]],
-    factNote: "*Rating, jam, ketersediaan fasilitas, dan harga dapat berubah. Nilai ini bukan rekomendasi, jaminan, atau harga resmi yang mengikat.",
-    planEyebrow: "01 · RENCANAKAN DENGAN RINGKAS",
-    planTitle: "Mulai dari waktu, kebutuhan anak, dan kondisi hari itu.",
-    planCards: [["Waktu terbaik", "Pagi di hari kerja umumnya memberi lebih banyak ruang untuk orientasi. Saat akhir pekan, libur sekolah, atau program khusus, datang lebih awal dan cek kanal resmi."], ["Durasi saran", "Siapkan 3–5 jam untuk perjalanan masuk, ganti pakaian, bermain air, makan, dan persiapan pulang. Sesuaikan dengan usia anak serta cuaca."], ["Tiket & biaya", "Halaman Traveloka menampilkan tiket hari kerja mulai Rp35.000. Perlakukan sebagai harga platform yang dinamis; verifikasi tiket, syarat usia, promo, dan biaya tambahan sebelum membeli."], ["Bawaan dasar", "Bawa pakaian renang, handuk, sandal anti-selip, baju ganti, kantong pakaian basah, pelindung matahari, air minum, dan kebutuhan anak." ]],
-    experienceEyebrow: "02 · NUANSA DAN AREA BERMAIN",
-    experienceTitle: "Tema Belanda terlihat dari kincir angin hingga area air keluarga.",
-    experienceLead: "Profil resmi Instagram menyebut konsep waterpark bertema kota Belanda. Foto publik dan catatan pengunjung memperlihatkan landmark kincir angin, area permainan air, serta sejumlah kolam dan perosotan. Kondisi operasional tiap area tetap perlu dikonfirmasi saat tiba.",
-    experienceCards: [["Landmark kincir angin", "Elemen visual paling mudah dikenali dari tempat ini dan titik yang sering muncul dalam foto lokasi."], ["Area bermain air", "Foto publik memperlihatkan struktur permainan air dan perosotan untuk aktivitas keluarga."], ["Kolam menurut catatan pengunjung", "Ulasan lama menyebut kolam anak, kolam balita, kolam dewasa, dan kolam perosotan. Gunakan ini sebagai konteks historis, bukan daftar fasilitas yang dijamin tersedia." ]],
-    accessEyebrow: "03 · MENUJU WATERPARK",
-    accessTitle: "Bagi perjalanan menjadi tiga tahap: sampai Tangerang, sambung lokal, lalu cek pintu masuk.",
-    accessLead: "Waktu tempuh bergantung titik awal dan kondisi lalu lintas. Gunakan Google Maps untuk rute langsung dan lihat kontak resmi jika memerlukan kepastian sebelum perjalanan.",
-    accessCards: [["Dari bandara", "Bandara Soekarno–Hatta (CGK) berjarak sekitar 30–45 km dan biasanya ditempuh 40–70 menit tergantung lalu lintas. Paling praktis dengan taksi resmi, mobil sewaan, atau layanan transportasi daring langsung ke alamat lengkap—cocok bila membawa anak atau perlengkapan berenang. Rute umumnya via Tol Jakarta–Tangerang menuju kawasan Pasar Kemis; konfirmasi titik keluar tol terkini di aplikasi navigasi."], ["Kereta dan bus", "KRL Commuterline melayani Stasiun Tangerang (jalur Tanah Abang–Tangerang) dari arah Jakarta. Dari stasiun, sambung dengan transportasi lokal (angkutan umum/ojek daring) ke Kuta Jaya, Pasar Kemis—tidak ada jalur kereta langsung ke pintu masuk. Untuk bus, gunakan koridor menuju Tangerang lalu sambungan lokal. Cek jadwal dan titik transit terbaru pada hari perjalanan."], ["Taksi, ojek, kendaraan pribadi", "Masukkan alamat serta koordinat yang sama ke aplikasi navigasi. Dari Jakarta atau Bandung, akses utama via Tol Jakarta–Tangerang (siapkan kartu uang elektronik/transaksi tol). Tentukan titik turun yang aman dan jangan menghalangi jalan atau akses kawasan."], ["Parkir", "Sumber publik yang diperiksa tidak memuat aturan atau tarif parkir pengunjung yang tetap. Tanyakan ketersediaan dan ikuti marka serta arahan petugas di lokasi." ]],
-    practicalEyebrow: "04 · LAYANAN & FASILITAS",
-    practicalTitle: "Kebutuhan praktis & fasilitas di sekitar (netral, tanpa sebutkan merek)",
-    practicalCards: [
-      ["Toilet & ruang ganti", "Bawa perlengkapan mandi ringkas. Konfirmasi ketersediaan dan kondisi ruang ganti atau toilet di lokasi, terutama saat ramai."],
-      ["Parkir", "Sumber publik yang diperiksa tidak memuat aturan atau tarif parkir pengunjung yang tetap. Tanyakan ketersediaan dan ikuti marka serta arahan petugas; pilih titik turun yang aman."],
-      ["Kuliner & minuman", "Di sekitar koridor Boulevard dan kawasan Pasar Kemis tersedia jenis gerai makanan, restoran keluarga, dan kedai minuman. Pilih berdasarkan kebutuhan; cek jam buka dan aturan bawa makanan dari luar."],
-      ["Akomodasi", "Jika menginap, pilih jenis akomodasi resmi di area Tangerang—seperti hotel, penginapan, atau resor keluarga—sesuai anggaran dan jarak. Bandingkan secara mandiri; panduan ini tidak mencantumkan merek tertentu."],
-      ["Toko & kebutuhan harian", "Untuk keperluan mendadak, gunakan peta untuk menyaring minimarket, apotek, atau pasar terdekat. Siapkan obat pribadi dan perlengkapan anak sebelum berangkat."],
-      ["Bahan bakar & pengisian daya", "Pengemudi kendaraan pribadi dapat mengecek stasiun bahan bakar atau titik pengisian daya (EV) di aplikasi peta sebelum memasuki rute lokal."],
-      ["Kesehatan & keselamatan", "Awasi anak setiap saat, ikuti aturan tinggi/usia, dan periksa kedalaman kolam serta kondisi lantai sebelum bermain. Kenali titik pertolongan pertama di lokasi."]
+  "id": {
+    "locale": "id-ID",
+    "title": "Amsterdam Waterpark Tangerang: Lokasi, Jam & Tiket",
+    "description": "Panduan independen Amsterdam Waterpark di Villa Tomang Baru, Pasar Kemis, Tangerang: lokasi, jam peta bertanggal, tiket dan fasilitas yang perlu dikonfirmasi.",
+    "languageSwitch": "English",
+    "guideMark": "PANDUAN PENGUNJUNG / 2026",
+    "factsMeta": "00 · FAKTA",
+    "sourcesMeta": "SUMBER",
+    "legalMeta": "HUKUM",
+    "informationMeta": "INFORMASI",
+    "navigationAria": "Navigasi utama",
+    "breadcrumbAria": "Breadcrumb",
+    "nearbyLead": "Jika menambah tujuan lain, periksa alamat, akses, jam dan rutenya secara terpisah. Panduan ini tidak memverifikasi tujuan sekitar sebagai satu kawasan atau satu tiket.",
+    "govtLead": "Untuk informasi pariwisata resmi tingkat provinsi, kunjungi",
+    "nav": [
+      "Beranda",
+      "Cuaca",
+      "Rencanakan",
+      "Wahana",
+      "Akses",
+      "Info kunjungan",
+      "FAQ"
     ],
-    mapEyebrow: "05 · PETA DAN KONTAK",
-    mapTitle: "Biarkan peta menangani belokan terakhir.",
-    mapLead: "Gunakan peta langsung untuk kondisi lalu lintas, arah masuk, dan estimasi waktu. Untuk pertanyaan operasional, gunakan nomor yang tampil pada Google Maps atau kanal Instagram resmi.",
-    faqEyebrow: "06 · FAQ",
-    faqTitle: "Jawaban ringkas untuk pertanyaan yang paling sering muncul.",
-    faqs: [["Berapa harga tiket Amsterdam Waterpark?", "Traveloka menampilkan tiket masuk hari kerja mulai Rp35.000. Harga, promo, jenis tiket, dan ketersediaan dapat berubah; konfirmasi sebelum membeli atau berangkat."], ["Jam berapa waterpark buka?", "Google Maps menampilkan jam 08.00–17.00. Karena jam operasional dapat berubah untuk cuaca, hari libur, atau kegiatan khusus, periksa peta atau kanal resmi di hari kunjungan."], ["Apakah ada area untuk anak?", "Foto publik dan ulasan pengunjung mendokumentasikan area permainan air serta kolam anak. Kesesuaian untuk usia tertentu, pengawasan, dan area yang sedang beroperasi perlu diperiksa langsung."], ["Bagaimana dari bandara atau transportasi umum?", "Dari bandara, kendaraan langsung biasanya paling praktis. Untuk transportasi umum, rencanakan sambungan kereta/bus ke Tangerang lalu transportasi lokal; gunakan peta untuk rute harian."], ["Apakah parkir tersedia?", "Kami tidak menemukan tarif atau ketentuan parkir tetap dari sumber publik. Konfirmasi ketersediaan saat tiba dan ikuti arahan petugas."], ["Bagaimana mengirim koreksi informasi?", "Gunakan tautan umpan balik di bawah dan sertakan sumber publik atau detail yang dapat diperiksa. Catatan ini membantu menjaga panduan tetap akurat dan netral." ]],
-    feedbackEyebrow: "BANTU PERBAIKI PANDUAN",
-    feedbackTitle: "Menemukan informasi yang tidak akurat?",
-    feedbackLead: "Kirim koreksi, tautan sumber, atau catatan akses yang bermanfaat. Kami meninjau informasi berdasarkan sumber publik dan tidak menerima rekomendasi komersial berbayar.",
-    feedback: "Kirim umpan balik",
-    sourceTitle: "Sumber dan batas informasi",
-    sourceLead: "Google Maps dipakai untuk lokasi, kategori, koordinat, telepon, status jam, dan rating publik. Traveloka dipakai untuk contoh harga platform. Instagram resmi dipakai untuk deskripsi tema dan kanal operasional. Foto dalam panduan berasal dari listing publik beratribusi; hak cipta tetap pada fotografer atau pemegang hak masing-masing.",
-    sourceLabels: ["Google Maps", "Traveloka", "Instagram resmi", "Ulasan & foto publik"],
-    photoCredits: ["Foto lokasi dari listing Traveloka; hak cipta pemegang hak asli.", "Foto lokasi dari listing publik Wanderboat; hak cipta pemegang hak asli.", "Foto pengunjung dari listing Tripadvisor; hak cipta fotografer asli.", "Foto pengunjung dari listing Tripadvisor; hak cipta fotografer asli."],
-    footer: "Situs ini adalah panduan informasi pengunjung independen dan non-komersial. Situs tidak berafiliasi dengan Amsterdam Waterpark, pemerintah, atau organisasi resmi mana pun.",
-    footerNote: "Informasi bersumber dari catatan publik dan dapat berubah. Selalu konfirmasi detail penting sebelum bepergian.",
-    legal: ["Kebijakan Privasi", "Ketentuan Layanan", "Pengaturan Cookie"],
-    copyright: "© 2026 Amsterdam Waterpark Visitor Guide. Konten asli dilindungi.",
-    sources: ["Lihat di Google Maps", "Cek tiket di Traveloka", "Buka Instagram resmi", "Baca ulasan & foto publik"],
-    weatherEyebrow: "CUACA HARI INI",
-    weatherTitle: "Cuaca di lokasi & prakiraan beberapa hari ke depan",
-    weatherLead: "Cek sebelum berangkat: suhu, peluang hujan, dan apakah perlu membawa payung atau pelindung matahari.",
-    storyEyebrow: "CERITA & TEMA",
-    storyTitle: "Mengapa nuansa Belanda? Latar tema dan konteksnya",
-    storyLead: "Amsterdam Waterpark mengusung konsep tema kota Belanda—dari kincir angin hingga estetika kanal. Berikut latar yang membantu memahami tempat ini sebagai pengunjung.",
-    storyBody: [
-      "Konsep tematik mengambil elemen visual Belanda: kincir angin sebagai penanda utama, sentuhan warna dan bentuk yang merujuk pada kota kanal, serta area bermain air yang dipadukan dengan nuansa tersebut. Pendekatan ini umum pada kawasan rekreasi keluarga di Indonesia sebagai cara mengenalkan suasana lintas-budaya dalam satu kunjungan.",
-      "Nama yang digunakan di kanal resmi (\"I Amsterdam\") merujuk pada tema tersebut, bukan pada lokasi di Eropa. Tempat ini berada di Pasar Kemis, Tangerang, Banten, Indonesia—bagian penting untuk menjaga ekspektasi agar tidak tertukar dengan tujuan di Belanda.",
-      "Catatan: detail sejarah, tahun berdiri, dan tokoh pendiri sebaiknya dikonfirmasi melalui kanal resmi atau pihak pengelola. Panduan ini mencantumkan latar interpretatif agar kunjungan lebih bermakna, tanpa mengklaim fakta sejarah yang belum diverifikasi.",
-      "Secara lebih luas, citra kota kanal dan kincir angin memang bagian dari khazanah visual Belanda yang juga hadir di banyak sudut Indonesia—misalnya bangunan bergaya kolonial di Kota Tua Jakarta. Tempat rekreasi kerap meminjam motif tersebut sebagai bahasa visual yang mudah dikenali, sehingga nuansa 'Belanda' di sini lebih tepat dibaca sebagai estetika tema daripada klaim sejarah tertentu."
+    "eyebrow": "PANDUAN PENGUNJUNG INDEPENDEN · PASAR KEMIS",
+    "heroTitle": "Amsterdam Waterpark,\ndi Pasar Kemis, Tangerang.",
+    "heroLead": "Amsterdam Waterpark adalah waterpark bertema kota Belanda di Villa Tomang Baru Square, Kuta Jaya. Gunakan panduan ini untuk menyusun kunjungan, lalu konfirmasi detail dinamis sebelum berangkat.",
+    "maps": "Buka Google Maps",
+    "plan": "Rencanakan kunjungan",
+    "tagVerified": "LOKASI PETA · 19 OKTOBER 2026",
+    "tagDynamic": "INFO DINAMIS · CEK SEBELUM BERANGKAT",
+    "factTitle": "Informasi inti, dengan batas yang jelas.",
+    "factLead": "Snapshot Google Maps diperiksa pada 19 Oktober 2026. Ini bukan situs operator atau daftar harga resmi; tiap fasilitas dapat memiliki syarat dan biaya berbeda.",
+    "facts": [
+      [
+        "Alamat",
+        "Villa Tomang Baru Square, Jl. Villa Tomang Baru No.1, Kuta Jaya, Pasar Kemis, Tangerang, Banten 15561"
+      ],
+      [
+        "Koordinat",
+        "-6.1582786, 106.5835666"
+      ],
+      [
+        "Telepon",
+        "+62 21 5924434 · nomor listing Maps, 19 Oktober 2026"
+      ],
+      [
+        "Jam yang tampil di peta",
+        "Setiap hari 08.00–17.00 · snapshot 19 Oktober 2026"
+      ],
+      [
+        "Rating peta",
+        "4,3 / 5 · 5.466 ulasan (19 Oktober 2026)"
+      ],
+      [
+        "Tiket & biaya terpisah",
+        "Harga saat ini belum diverifikasi"
+      ]
     ],
-    storyCards: [
-      ["Kincir angin sebagai simbol", "Elemen yang paling mudah dikenali dan sering menjadi titik foto. Anggap sebagai penanda orientasi saat menavigasi area."],
-      ["Estetika kota kanal", "Sentuhan warna dan bentuk yang merujuk pada kota Belanda, cocok sebagai latar foto keluarga yang ringan."],
-      ["Nama lintas-budaya", "Nama resmi merujuk tema, bukan lokasi Eropa. Pastikan alamat dan koordinat digunakan untuk navigasi yang tepat."]
+    "factNote": "Jam listing bukan jaminan seluruh kolam, perosotan atau layanan beroperasi. Cuaca, pemeliharaan, hari libur dan ketentuan operator dapat mengubah akses.",
+    "planEyebrow": "01 · RENCANAKAN DENGAN RINGKAS",
+    "planTitle": "Mulai dari waktu, kebutuhan anak, dan kondisi hari itu.",
+    "planCards": [
+      [
+        "Waktu terbaik",
+        "Pilih waktu sesuai keluarga dan prakiraan harian. Hubungi lokasi sebelum berangkat untuk memastikan akses hari itu, terutama saat libur atau cuaca buruk."
+      ],
+      [
+        "Durasi saran",
+        "Saran perencanaan 3–5 jam, bukan durasi resmi atau jaminan semua wahana bisa digunakan. Sesuaikan dengan kebutuhan keluarga, area yang buka dan cuaca."
+      ],
+      [
+        "Tiket & biaya",
+        "Harga masuk terkini belum diverifikasi. Tanyakan tiket dewasa/anak, tanggal berlaku, biaya parkir, sewa perlengkapan, loker serta aktivitas tambahan secara terpisah. Jangan menganggap satu tiket mencakup semuanya."
+      ],
+      [
+        "Bawaan dasar",
+        "Bawa pakaian renang, handuk, sandal anti-selip, baju ganti, kantong pakaian basah, pelindung matahari, air minum, dan kebutuhan anak."
+      ]
     ],
-    seasonsEyebrow: "STRATEGI KUNJUNGAN PER KUARTAL",
-    seasonsTitle: "Kapan waktu terbaik? Strategi berdasarkan pola iklim wilayah",
-    seasonsLead: "Tangerang memiliki pola iklim tropis dengan musim hujan (biasanya Nov–Apr) dan musim kemarau (biasanya Mei–Okt). Berikut panduan umum berdasarkan kebiasaan iklim setempat, bukan prakiraan hari ini. Untuk waterpark terbuka, hujan sore hari dan kondisi kolam dapat berubah; konfirmasi di lokasi. Di kawasan rekreasi terkelola ini, tidak ada isu satwa liar yang perlu dikhawatirkan.",
-    seasons: [
-      ["Kuartal I (Des–Feb)", "Puncak musim hujan; hujan sore sering terjadi, suhu cenderung sejuk.", "Pilih hari kerja dan datang pagi. Bawa jas hujan/payung lipat dan pakaian ganti. Area terbuka mungkin terbatas saat hujan lebat."],
-      ["Kuartal II (Mar–Mei)", "Transisi; curah hujan menurun, keseimbangan cuaca cukup baik.", "Window terbaik untuk kenyamanan seimbang. Pantau prakiraan harian; siapkan pelindung matahari untuk siang yang cerah."],
-      ["Kuartal III (Jun–Ags)", "Musim kemarau; paling cerah dan nyaman, namun bisa lebih ramai.", "Waktu paling stabil untuk bermain air. Datang lebih awal di akhir pekan, dan utamakan hidrasi serta sun protection."],
-      ["Kuartal IV (Sep–Nov)", "Kemarau ke transisi; cuaca umumnya masih baik sebelum hujan tiba.", "Kunjungan sore sering menyenangkan. Cek pola hujan mingguan sebelum berangkat."]
+    "experienceEyebrow": "02 · NUANSA DAN AREA BERMAIN",
+    "experienceTitle": "Tema visual dan fasilitas yang perlu diperiksa.",
+    "experienceLead": "Artikel Pemerintah Kota Tangerang pada 25 April 2025 menyebut Amsterdam Waterpark bertema Eropa/kincir angin. Sumber itu memberi konteks tema, bukan daftar kolam, perosotan atau sarana olahraga yang beroperasi sekarang.",
+    "experienceCards": [
+      [
+        "Tema visual",
+        "Kincir angin adalah bagian dari deskripsi tema pada artikel pemerintah 2025. Foto referensi bukan bukti kondisi hari ini."
+      ],
+      [
+        "Kolam dan perosotan",
+        "Tanyakan area mana yang buka, kedalaman, pembatasan usia/tinggi dan kebutuhan pengawasan. Tidak ada ukuran atau ketentuan anak yang kami verifikasi."
+      ],
+      [
+        "Olahraga dan layanan lain",
+        "Lapangan olahraga, aktivitas tambahan, sewa alat dan layanan anak tidak otomatis termasuk tiket waterpark. Konfirmasikan operator, jadwal dan biaya masing-masing."
+      ]
     ],
-    routesEyebrow: "RUTE BERDASARKAN JENIS PENGUNJUNG",
-    routesTitle: "Tiga rute yang disusun menurut kebutuhan",
-    routesLead: "Pilih berdasarkan siapa yang ikut dan bagaimana ritme perjalanan Anda.",
-    audienceRoutes: [
-      ["Keluarga dengan anak", "Mulai dari kolam anak dan area dangkal, lanjut ke permainan air bertema, lalu istirahat di area teduh. Siapkan pakaian ganti, sun protection, dan pantau kedalaman kolam. Jangan tinggalkan anak tanpa pengawasan."],
-      ["Fotografi & alam", "Ambil foto kincir angin saat cahaya pagi/lembut, jelajahi estetika kanal, dan manfaatkan refleksi air. Bawa perlengkapan anti-air untuk kamera dan hindari jam ramai untuk framing bersih."],
-      ["Lansia & akses mudah", "Utamakan area dangkal dan tempat duduk teduh, hindari perosotan tinggi, dan atur istirahat rutin. Cek ketersediaan jalur dan fasilitas ramah akses saat tiba."]
+    "accessEyebrow": "03 · MENUJU WATERPARK",
+    "accessTitle": "Bagi perjalanan menjadi tiga tahap: sampai Tangerang, sambung lokal, lalu cek pintu masuk.",
+    "accessLead": "Gunakan alamat lengkap dan pin peta; rute, jadwal dan waktu tempuh harus diperiksa sesuai titik awal dan hari perjalanan.",
+    "accessCards": [
+      [
+        "Dari bandara",
+        "Jika tiba di Soekarno–Hatta, tanyakan penyedia transportasi tentang perjalanan ke alamat lengkap di Pasar Kemis. Jarak, durasi, ongkos dan titik jemput belum diverifikasi dalam panduan ini."
+      ],
+      [
+        "Kereta dan bus",
+        "Periksa jaringan dan jadwal melalui operator angkutan pada hari perjalanan. Tidak ada nomor trayek, stasiun transit atau sambungan langsung ke pintu masuk yang kami konfirmasi."
+      ],
+      [
+        "Kendaraan pribadi atau sewaan",
+        "Pakai pin -6.1582786, 106.5835666 dan alamat Villa Tomang Baru Square. Periksa akses jalan dan pintu masuk terkini; sepakati titik turun dan perjalanan kembali."
+      ],
+      [
+        "Parkir",
+        "Tanyakan ketersediaan, lokasi, jam dan tarif parkir sebelum berangkat. Ikuti penunjuk serta arahan petugas."
+      ]
     ],
-    generalRoutesEyebrow: "RUTE UMUM",
-    generalRoutes: [
-      ["Rute setengah hari", "Datang pagi → ganti pakaian → kolam anak & area dangkal (1–1,5 jam) → foto kincir angin → makan ringan → persiapan pulang. Cocok untuk kunjungan singkat atau bersama balita."],
-      ["Rute hari penuh", "Datang pagi → eksplorasi area bermain air → istirahat siang → kolam dewasa/perosotan → foto tema → aktivitas sekitar (taman/ruang terbuka) → kembali. Siapkan 3–5 jam dan kebutuhan harian."]
+    "practicalEyebrow": "04 · LAYANAN & FASILITAS",
+    "practicalTitle": "Kebutuhan praktis sebelum pergi",
+    "practicalCards": [
+      [
+        "Toilet & ruang ganti",
+        "Bawa perlengkapan mandi ringkas. Konfirmasi ketersediaan dan kondisi ruang ganti atau toilet di lokasi, terutama saat ramai."
+      ],
+      [
+        "Parkir",
+        "Sumber publik yang diperiksa tidak memuat aturan atau tarif parkir pengunjung yang tetap. Tanyakan ketersediaan dan ikuti marka serta arahan petugas; pilih titik turun yang aman."
+      ],
+      [
+        "Kuliner & minuman",
+        "Periksa langsung pilihan makanan dan minuman, jam usaha serta aturan membawa bekal. Tidak ada daftar gerai atau menu terkini yang diverifikasi di sini."
+      ],
+      [
+        "Akomodasi",
+        "Jika menginap, bandingkan jenis akomodasi di area Tangerang—seperti hotel, penginapan, atau resor keluarga—sesuai anggaran dan jarak. Bandingkan secara mandiri; panduan ini tidak mencantumkan merek tertentu."
+      ],
+      [
+        "Toko & kebutuhan harian",
+        "Untuk keperluan mendadak, gunakan peta untuk menyaring minimarket, apotek, atau pasar terdekat. Siapkan obat pribadi dan perlengkapan anak sebelum berangkat."
+      ],
+      [
+        "Bahan bakar & pengisian daya",
+        "Pengemudi kendaraan pribadi dapat mengecek stasiun bahan bakar atau titik pengisian daya (EV) di aplikasi peta sebelum memasuki rute lokal."
+      ],
+      [
+        "Kesehatan & keselamatan",
+        "Ikuti aturan operator dan batas usia/tinggi yang dipasang. Tanyakan pengawasan, perlengkapan yang diwajibkan dan bantuan darurat; jangan menganggap semuanya tersedia atau termasuk tiket."
+      ]
     ],
-    responsibilityEyebrow: "SAINS & TANGGUNG JAWAB PENGUNJUNG",
-    responsibilityTitle: "Bermain air yang aman, sehat, dan menjaga tempat",
-    responsibilityLead: "Panduan singkat berbasis prinsip rekreasi air dan tanggung jawab pengunjung. Bantu menjaga kawasan tetap aman dan nyaman untuk semua.",
-    responsibilityCards: [
-      ["Keamanan bermain air", "Awasi anak setiap saat, ikuti aturan tinggi/usia, dan periksa kedalaman serta kondisi lantai basah sebelum bermain. Jangan berenang saat petir atau saat area ditutup."],
-      ["Sinar matahari & hidrasi", "Gunakan pelindung matahari, topi, dan minum cukup air. Di iklim tropis, dehidrasi dan sengatan matahari bisa terjadi cepat meski cuaca berawan."],
-      ["Jaga kebersihan & lingkungan", "Buang sampah pada tempatnya, kurangi plastik sekali pakai, dan jangan sabun/shampo di kolam umum. Fasilitas bersih menjaga kenyamanan bersama."],
-      ["Hormati aturan & pengunjung lain", "Ikuti arahan petugas, jaga ketertiban antrean, dan hargai kenyamanan keluarga lain. Laporkan kondisi tidak aman ke petugas."]
+    "mapEyebrow": "05 · PETA DAN KONTAK",
+    "mapTitle": "Biarkan peta menangani belokan terakhir.",
+    "mapLead": "Peta membantu menemukan alamat di Pasar Kemis. Nomor telepon di atas hanya tercatat di Maps pada 19 Oktober 2026; bukan verifikasi kanal resmi operator.",
+    "faqEyebrow": "06 · FAQ",
+    "faqTitle": "Jawaban ringkas untuk pertanyaan yang paling sering muncul.",
+    "faqs": [
+      [
+        "Di mana Amsterdam Waterpark berada?",
+        "Di Villa Tomang Baru Square, Jl. Villa Tomang Baru No.1, Kuta Jaya, Pasar Kemis, Kabupaten Tangerang, Banten 15561, Indonesia. Gunakan pin -6.1582786, 106.5835666; bukan Amsterdam di Belanda."
+      ],
+      [
+        "Berapa harga tiket masuk?",
+        "Harga masuk terkini belum diverifikasi. Tanyakan tiket dewasa/anak, tanggal berlaku, biaya parkir, sewa perlengkapan, loker serta aktivitas tambahan secara terpisah. Jangan menganggap satu tiket mencakup semuanya."
+      ],
+      [
+        "Jam berapa buka?",
+        "Google Maps pada 19 Oktober 2026 menampilkan setiap hari 08.00–17.00. Ini snapshot listing, bukan jaminan semua fasilitas beroperasi; periksa kembali sebelum berangkat."
+      ],
+      [
+        "Apakah kolam anak dan perosotan buka?",
+        "Tanyakan area mana yang buka, kedalaman, pembatasan usia/tinggi dan kebutuhan pengawasan. Tidak ada ukuran atau ketentuan anak yang kami verifikasi."
+      ],
+      [
+        "Apakah sarana olahraga termasuk tiket?",
+        "Lapangan olahraga, aktivitas tambahan, sewa alat dan layanan anak tidak otomatis termasuk tiket waterpark. Konfirmasikan operator, jadwal dan biaya masing-masing."
+      ],
+      [
+        "Bagaimana menuju lokasi?",
+        "Gunakan alamat lengkap dan pin peta; rute, jadwal dan waktu tempuh harus diperiksa sesuai titik awal dan hari perjalanan. Periksa jaringan dan jadwal melalui operator angkutan pada hari perjalanan. Tidak ada nomor trayek, stasiun transit atau sambungan langsung ke pintu masuk yang kami konfirmasi."
+      ],
+      [
+        "Apakah parkir dan loker tersedia?",
+        "Ketersediaan, kapasitas dan biaya parkir maupun loker belum kami verifikasi. Tanyakan terpisah kepada petugas sebelum membeli tiket."
+      ],
+      [
+        "Apakah ini situs resmi?",
+        "Tidak. Ini panduan independen; tidak menjual tiket atau mewakili operator. Maps dan artikel pemerintah ditautkan sebagai sumber sesuai batas masing-masing."
+      ]
+    ],
+    "sourceTitle": "Sumber dan batas informasi",
+    "sourceLead": "Lokasi, telepon, rating dan jam adalah snapshot Google Maps 19 Oktober 2026. Artikel Pemerintah Kota Tangerang 25 April 2025 mendukung konteks tema saja. Tautan penjual tiket bukan harga resmi yang telah diverifikasi; akun Instagram lama belum diverifikasi sebagai kanal operator.",
+    "sourceLabels": [
+      "Google Maps",
+      "Artikel pemerintah · 2025",
+      "Penjual tiket pihak ketiga",
+      "Akun Instagram belum diverifikasi"
+    ],
+    "photoCredits": [
+      "Gambar referensi; atribusi lama: Traveloka. Lokasi dan tanggal foto belum diverifikasi independen; kondisi kini dapat berbeda.",
+      "Gambar referensi; atribusi lama: Wanderboat. Lokasi dan tanggal foto belum diverifikasi independen; kondisi kini dapat berbeda.",
+      "Gambar referensi; atribusi lama: Tripadvisor. Lokasi dan tanggal foto belum diverifikasi independen; kondisi kini dapat berbeda.",
+      "Gambar referensi; atribusi lama: Tripadvisor. Lokasi dan tanggal foto belum diverifikasi independen; kondisi kini dapat berbeda."
+    ],
+    "footer": "Situs ini adalah panduan informasi pengunjung independen dan non-komersial. Situs tidak berafiliasi dengan Amsterdam Waterpark, pemerintah, atau organisasi resmi mana pun.",
+    "footerNote": "Informasi bersumber dari catatan publik dan dapat berubah. Selalu konfirmasi detail penting sebelum bepergian.",
+    "legal": [
+      "Kebijakan Privasi",
+      "Ketentuan Layanan",
+      "Pengaturan Cookie"
+    ],
+    "copyright": "© 2026 Amsterdam Waterpark Visitor Guide. Konten asli dilindungi.",
+    "sources": [
+      "Lihat listing bertanggal",
+      "Baca konteks tema",
+      "Periksa syarat penjual",
+      "Konfirmasikan identitas sebelum mengandalkan"
+    ],
+    "weatherEyebrow": "CUACA HARI INI",
+    "weatherTitle": "Prakiraan regional untuk rencana kunjungan",
+    "weatherLead": "Prakiraan Open-Meteo di sekitar pin peta; bukan sensor lokasi atau konfirmasi pembukaan fasilitas. Periksa waktu data dan arahan operator.",
+    "storyEyebrow": "CERITA & TEMA",
+    "storyTitle": "Mengapa nuansa Belanda? Latar tema dan konteksnya",
+    "storyLead": "Nama bertema tidak memindahkan alamatnya dari Pasar Kemis, Indonesia.",
+    "storyBody": [
+      "Nama Amsterdam mengacu pada tema visual dalam artikel pemerintah 2025. Alamat yang diperiksa adalah di Pasar Kemis, Kabupaten Tangerang, Banten, Indonesia.",
+      "Tahun pembukaan, pendiri dan perubahan fasilitas tidak kami tetapkan tanpa sumber yang dapat ditelusuri. Gambar referensi tidak menggantikan konfirmasi keadaan sekarang."
+    ],
+    "storyCards": [
+      [
+        "Tema, bukan lokasi Eropa",
+        "Gunakan alamat Pasar Kemis untuk navigasi."
+      ],
+      [
+        "Konteks bersumber",
+        "Artikel pemerintah 2025 membahas tema, bukan katalog fasilitas sekarang."
+      ],
+      [
+        "Keadaan saat ini",
+        "Konfirmasikan akses dan layanan langsung sebelum pergi."
+      ]
+    ],
+    "seasonsEyebrow": "STRATEGI KUNJUNGAN PER KUARTAL",
+    "seasonsTitle": "Rencana fleksibel untuk cuaca yang berubah",
+    "seasonsLead": "Prakiraan adalah informasi regional, bukan pengukuran di kolam atau keputusan buka/tutup. Tidak ada bulan yang dijamin bebas hujan. Utamakan pengumuman operator pada hari kunjungan.",
+    "seasons": [
+      [
+        "Sebelum pergi",
+        "Periksa prakiraan",
+        "Tinjau hujan dan petir, lalu konfirmasikan kegiatan yang dibuka."
+      ],
+      [
+        "Saat hujan",
+        "Ikuti arahan petugas",
+        "Jangan menganggap semua wahana tetap beroperasi."
+      ],
+      [
+        "Saat panas",
+        "Siapkan kebutuhan pribadi",
+        "Bawa pelindung matahari dan minuman sesuai aturan lokasi."
+      ],
+      [
+        "Jika rencana berubah",
+        "Periksa syarat tiket",
+        "Tanyakan perubahan tanggal atau kebijakan pembatalan kepada penjual sebelum membeli."
+      ]
+    ],
+    "routesEyebrow": "RUTE BERDASARKAN JENIS PENGUNJUNG",
+    "routesTitle": "Tiga rute yang disusun menurut kebutuhan",
+    "routesLead": "Pilih berdasarkan siapa yang ikut dan bagaimana ritme perjalanan Anda.",
+    "audienceRoutes": [
+      [
+        "Bersama anak",
+        "Mulai dengan menanyakan batas usia/tinggi, kedalaman dan pengawasan. Pilih hanya area yang dibuka dan sesuai aturan operator."
+      ],
+      [
+        "Fotografi",
+        "Gunakan area yang diizinkan dan hormati privasi orang lain. Foto di panduan ini bukan jaminan sudut atau fasilitas yang sama dapat diakses."
+      ],
+      [
+        "Kebutuhan akses",
+        "Tanyakan jalur tanpa tangga, tempat istirahat dan ruang ganti yang sesuai sebelum perjalanan. Jangan menganggap area dangkal selalu cocok untuk semua pengunjung."
+      ]
+    ],
+    "generalRoutesEyebrow": "RUTE UMUM",
+    "generalRoutes": [
+      [
+        "Kunjungan singkat",
+        "Saran: konfirmasi tiket → orientasi aturan → pilih area yang dibuka → istirahat → pulang. Tidak ada urutan wahana yang dijamin."
+      ],
+      [
+        "Waktu lebih longgar",
+        "Saran 3–5 jam termasuk persiapan dan istirahat. Sesuaikan dengan area yang benar-benar dibuka, kebutuhan keluarga dan cuaca."
+      ]
+    ],
+    "responsibilityEyebrow": "SAINS & TANGGUNG JAWAB PENGUNJUNG",
+    "responsibilityTitle": "Aturan dan persiapan berkunjung",
+    "responsibilityLead": "Utamakan aturan lokasi, kondisi hari itu dan kebutuhan kelompok Anda.",
+    "responsibilityCards": [
+      [
+        "Keamanan bermain air",
+        "Awasi anak setiap saat, ikuti aturan tinggi/usia, dan periksa kedalaman serta kondisi lantai basah sebelum bermain. Jangan berenang saat petir atau saat area ditutup."
+      ],
+      [
+        "Sinar matahari & hidrasi",
+        "Siapkan pelindung matahari, minuman dan kebutuhan pribadi sesuai aturan lokasi. Sesuaikan kegiatan dengan kondisi Anda."
+      ],
+      [
+        "Jaga kebersihan & lingkungan",
+        "Buang sampah pada tempatnya, kurangi plastik sekali pakai, dan jangan sabun/shampo di kolam umum. Fasilitas bersih menjaga kenyamanan bersama."
+      ],
+      [
+        "Hormati aturan & pengunjung lain",
+        "Ikuti arahan petugas, jaga ketertiban antrean, dan hargai kenyamanan keluarga lain. Laporkan kondisi tidak aman ke petugas."
+      ]
     ]
   },
-  en: {
-    locale: "en-US",
-    title: "Amsterdam Waterpark Tangerang — Travel Guide",
-    description: "Independent visitor guide to Amsterdam Waterpark, a Dutch-themed water park in Tangerang, Banten, Indonesia. Tickets from Rp35,000, water slides, kids' pool, opening hours, transport, map, FAQ.",
-    languageSwitch: "Bahasa Indonesia",
-    guideMark: "VISITOR GUIDE / 2026",
-    factsMeta: "00 · FACTS",
-    sourcesMeta: "SOURCES",
-    legalMeta: "LEGAL",
-    informationMeta: "INFORMATION",
-    navigationAria: "Main navigation",
-    breadcrumbAria: "Breadcrumb",
-    nearbyLead: "When visiting Amsterdam Waterpark, you can explore surrounding points of interest, including",
-    govtLead: "For official provincial tourism information, visit",
-    cookieAllowSaved: "Saved: analytics allowed.",
-    cookieDeclineSaved: "Saved: analytics declined.",
-    nav: ["Home", "Weather", "Plan", "Water play", "Getting there", "Visit info", "FAQ"],
-    eyebrow: "INDEPENDENT VISITOR GUIDE · PASAR KEMIS",
-    heroTitle: `A day of water play,
-framed by windmills.`,
-    heroLead: "Amsterdam Waterpark is a Dutch-city-themed waterpark at Villa Tomang Baru Square, Kuta Jaya. Use this guide to shape your visit, then confirm dynamic details before leaving.",
-    maps: "Open Google Maps",
-    plan: "Plan your visit",
-    tagVerified: "LOCATION CHECKED",
-    tagDynamic: "DYNAMIC DETAILS · CHECK BEFORE YOU GO",
-    factTitle: "Core information, with clear limits.",
-    factLead: "Location, telephone number, waterpark category, map rating, and displayed opening status come from public Google Maps records. Price is taken from a third-party platform and can change.",
-    facts: [["Address", "Villa Tomang Baru Square, Jl. Villa Tomang Baru No.1, Kuta Jaya, Pasar Kemis, Tangerang, Banten 15561"], ["Coordinates", "-6.1582786, 106.5835666"], ["Telephone", "+62 21 5924434"], ["Hours shown on the map", "08:00–17:00 · check again on your visit day"], ["Map rating", "4.2 / 5 from 5,438 public reviews*"], ["Platform ticket", "from Rp35,000 for weekday entry*" ]],
-    factNote: "*Ratings, hours, facility availability, and prices can change. These figures are neither an endorsement nor a binding official offer.",
-    planEyebrow: "01 · PLAN THE BASICS", planTitle: "Start with timing, children’s needs, and the day’s conditions.",
-    planCards: [["Best time", "A weekday morning can offer more room to get oriented. On weekends, school holidays, or special-programme days, arrive early and check official channels."], ["Suggested duration", "Allow 3–5 hours for arrival, changing, water play, food, and getting ready to leave. Adjust for children’s ages and the weather."], ["Tickets & cost", "Traveloka shows weekday entry from Rp35,000. Treat this as a dynamic platform price; check ticket type, age conditions, promotions, and extra charges before buying."], ["Essentials", "Bring swimwear, towels, non-slip sandals, a change of clothes, a wet-bag, sun protection, drinking water, and children’s essentials." ]],
-    experienceEyebrow: "02 · THEME AND WATER PLAY", experienceTitle: "A Dutch theme runs from windmills to family water-play areas.",
-    experienceLead: "The official Instagram profile describes a Dutch-city-themed waterpark. Public photos and visitor notes show a windmill landmark, water-play structures, and several pools and slides. Please confirm the day’s operating areas when you arrive.",
-    experienceCards: [["Windmill landmark", "The location’s clearest visual marker and a recurring feature in public place photography."], ["Water-play area", "Public photographs show water-play structures and slides for family activity."], ["Pools in visitor notes", "Older reviews mention children’s, toddler, adult, and slide pools. Treat this as historical visitor context, not a guaranteed current facility list." ]],
-    accessEyebrow: "03 · GETTING THERE", accessTitle: "Break the journey into three stages: reach Tangerang, connect locally, then check the entrance.",
-    accessLead: "Journey time depends on your origin and traffic. Use Google Maps for the live route and consult official contact channels if you need confirmation before setting out.",
-    accessCards: [["From the airport", "Soekarno–Hatta Airport (CGK) is roughly 30–45 km away, typically a 40–70 minute drive depending on traffic. The easiest option is an official taxi, hired car, or ride-hailing service straight to the full address—handy with children or swim gear. The usual route runs via the Jakarta–Tangerang Toll Road toward Pasar Kemis; confirm the latest toll exit in your navigation app."], ["Rail and bus", "KRL Commuterline serves Tangerang Station (the Tanah Abang–Tangerang line) from Jakarta. From there, connect by local transport (public minibus or ride-hailing) to Kuta Jaya, Pasar Kemis—there is no direct rail line to the entrance. For buses, use a corridor toward Tangerang then a local connection. Check current timetables and transfer points on the day of travel."], ["Taxi, motorcycle taxi, private car", "Enter the same address and coordinates in your navigation app. From Jakarta or Bandung, the main access is via the Jakarta–Tangerang Toll Road (have an electronic toll card ready). Choose a safe drop-off point and do not obstruct estate roads or access points."], ["Parking", "The public sources checked do not publish permanent visitor-parking rules or tariffs. Ask about availability and follow markings and staff directions on arrival." ]],
-    practicalEyebrow: "04 · SERVICES & FACILITIES", practicalTitle: "Practical needs & nearby facilities (neutral, no brand mentions)",
-    practicalCards: [
-      ["Toilets & changing", "Bring compact wash essentials. Confirm changing-room and toilet availability or condition on site, especially during busy periods."],
-      ["Parking", "The public sources checked do not publish permanent visitor-parking rules or tariffs. Ask about availability and follow markings and staff directions; choose a safe drop-off point."],
-      ["Food & drink", "Around the Boulevard corridor and Pasar Kemis area you'll find food stalls, family restaurants, and beverage outlets by type. Choose by need; check opening hours and outside-food rules."],
-      ["Accommodation", "If staying over, choose official accommodation types in the Tangerang area—such as hotels, guesthouses, or family resorts—by budget and distance. Compare independently; this guide names no specific brand."],
-      ["Shops & daily needs", "For last-minute needs, use a map to filter nearby convenience stores, pharmacies, or markets. Pack personal medication and children's supplies before leaving."],
-      ["Fuel & charging", "Private-vehicle drivers can check fuel stations or EV charging points in a map app before taking local roads."],
-      ["Health & safety", "Supervise children at all times, follow height/age rules, and check pool depth and surface conditions before playing. Locate the first-aid point on site."]
+  "en": {
+    "locale": "en-US",
+    "title": "Amsterdam Waterpark Tangerang: Location, Hours & Tickets",
+    "description": "Independent Amsterdam Waterpark guide in Villa Tomang Baru, Pasar Kemis, Tangerang: location, dated map hours, tickets and facilities to confirm.",
+    "languageSwitch": "Bahasa Indonesia",
+    "guideMark": "VISITOR GUIDE / 2026",
+    "factsMeta": "00 · FACTS",
+    "sourcesMeta": "SOURCES",
+    "legalMeta": "LEGAL",
+    "informationMeta": "INFORMATION",
+    "navigationAria": "Main navigation",
+    "breadcrumbAria": "Breadcrumb",
+    "nearbyLead": "If adding another destination, check its address, access, hours and route independently. This guide does not establish nearby places as a shared site or combined ticket.",
+    "govtLead": "For official provincial tourism information, visit",
+    "nav": [
+      "Home",
+      "Weather",
+      "Plan",
+      "Water play",
+      "Getting there",
+      "Visit info",
+      "FAQ"
     ],
-    mapEyebrow: "05 · MAP AND CONTACT", mapTitle: "Let the map take care of the final turns.",
-    mapLead: "Use the live map for traffic, entrance directions, and time estimates. For operating questions, use the phone number listed in Google Maps or the official Instagram channel.",
-    faqEyebrow: "06 · FAQ", faqTitle: "Short answers to the questions visitors ask most.",
-    faqs: [["How much are Amsterdam Waterpark tickets?", "Traveloka shows weekday entry from Rp35,000. Prices, promotions, ticket types, and availability can change; confirm before buying or travelling."], ["What time does the waterpark open?", "Google Maps shows 08:00–17:00. Because hours may change for weather, public holidays, or special activity, check the map or official channel on the day you visit."], ["Is there an area for children?", "Public photographs and visitor reviews document water-play areas and children’s pools. Suitability for a particular age, supervision, and the areas operating that day need on-site confirmation."], ["How do I get there from the airport or by public transport?", "A direct vehicle from the airport is typically most practical. For public transport, plan a rail/bus connection toward Tangerang and then local transport; use a map for the day’s route."], ["Is parking available?", "We found no permanent public parking tariff or policy. Confirm availability on arrival and follow staff directions."], ["How can I submit a correction?", "Use the feedback link below and include a public source or verifiable detail. It helps keep this guide accurate and neutral." ]],
-    feedbackEyebrow: "HELP IMPROVE THIS GUIDE", feedbackTitle: "Spotted information that needs correcting?", feedbackLead: "Send a correction, source link, or useful access note. We review information against public sources and do not accept paid commercial recommendations.", feedback: "Send feedback",
-    sourceTitle: "Sources and information limits", sourceLead: "Google Maps is used for location, category, coordinates, telephone number, displayed hours, and public rating. Traveloka is used as a platform-price example. The official Instagram is used for theme description and operating contact. Guide photographs come from attributed public listings; copyright stays with each photographer or rights holder.",
-    sourceLabels: ["Google Maps", "Traveloka", "Official Instagram", "Public reviews & photos"],
-    photoCredits: ["Place photograph from a Traveloka listing; copyright remains with the original rights holder.", "Place photograph from a public Wanderboat listing; copyright remains with the original rights holder.", "Visitor photograph from a Tripadvisor listing; copyright remains with the original photographer.", "Visitor photograph from a Tripadvisor listing; copyright remains with the original photographer."],
-    footer: "This is an independent, non-commercial visitor-information guide. It is not affiliated with Amsterdam Waterpark, government, or any official organisation.", footerNote: "Information is based on public records and can change. Always confirm important details before travelling.", legal: ["Privacy Policy", "Terms of Use", "Cookie Settings"], copyright: "© 2026 Amsterdam Waterpark Visitor Guide. Original content protected.", sources: ["View in Google Maps", "Check tickets on Traveloka", "Open official Instagram", "Read public reviews & photos"],
-    weatherEyebrow: "TODAY'S WEATHER",
-    weatherTitle: "On-site weather & the next few days",
-    weatherLead: "Check before you set out: temperature, rain chance, and whether to pack an umbrella or sun protection.",
-    storyEyebrow: "STORY & THEME",
-    storyTitle: "Why a Dutch theme? The concept and its context",
-    storyLead: "Amsterdam Waterpark uses a Dutch-city theme—from windmills to canal-town aesthetics. Here is the background that helps you read the place as a visitor.",
-    storyBody: [
-      "The themed concept borrows Dutch visual elements: the windmill as the main landmark, colour and form that reference canal cities, and water-play areas blended with that mood. This approach is common at Indonesian family-recreation venues as a way to introduce a cross-cultural atmosphere within a single visit.",
-      "The name used on official channels (\"I Amsterdam\") refers to the theme, not to a location in Europe. The site is in Pasar Kemis, Tangerang, Banten, Indonesia—worth keeping in mind so expectations are not confused with destinations in the Netherlands.",
-      "Note: historical details, opening year, and founders should be confirmed through official channels or the operator. This guide offers interpretive background to make the visit more meaningful, without claiming unverified historical facts.",
-      "More broadly, canal-city and windmill imagery is part of the Dutch visual heritage that also appears in many corners of Indonesia—for example, the colonial-era buildings of Kota Tua in Jakarta. Recreation venues often borrow that motif as an instantly recognisable visual language, so the 'Dutch' feel here is best read as themed aesthetics rather than a specific historical claim."
+    "eyebrow": "INDEPENDENT VISITOR GUIDE · PASAR KEMIS",
+    "heroTitle": "Amsterdam Waterpark,\nin Pasar Kemis, Tangerang.",
+    "heroLead": "Amsterdam Waterpark is a Dutch-city-themed waterpark at Villa Tomang Baru Square, Kuta Jaya. Use this guide to shape your visit, then confirm dynamic details before leaving.",
+    "maps": "Open Google Maps",
+    "plan": "Plan your visit",
+    "tagVerified": "MAP LOCATION · 19 OCTOBER 2026",
+    "tagDynamic": "DYNAMIC DETAILS · CHECK BEFORE YOU GO",
+    "factTitle": "Core information, with clear limits.",
+    "factLead": "Google Maps snapshot checked on 19 October 2026. This is not an operator site or official price list; individual facilities may have separate conditions and charges.",
+    "facts": [
+      [
+        "Address",
+        "Villa Tomang Baru Square, Jl. Villa Tomang Baru No.1, Kuta Jaya, Pasar Kemis, Tangerang, Banten 15561"
+      ],
+      [
+        "Coordinates",
+        "-6.1582786, 106.5835666"
+      ],
+      [
+        "Telephone",
+        "+62 21 5924434 · Maps-listed number, 19 October 2026"
+      ],
+      [
+        "Hours shown on the map",
+        "Daily 08:00–17:00 · snapshot dated 19 October 2026"
+      ],
+      [
+        "Map rating",
+        "4.3 / 5 · 5,466 reviews (19 October 2026)"
+      ],
+      [
+        "Tickets & separate charges",
+        "Current prices not verified"
+      ]
     ],
-    storyCards: [
-      ["Windmill as a symbol", "The clearest visual marker and a frequent photo point. Treat it as an orientation landmark while navigating the grounds."],
-      ["Canal-town aesthetic", "Colour and form referencing Dutch cities, handy as a light family-photo backdrop."],
-      ["Cross-cultural name", "The official name references the theme, not a European location. Use the address and coordinates for accurate navigation."]
+    "factNote": "Listing hours do not guarantee that every pool, slide or service operates. Weather, maintenance, holidays and operator rules may change access.",
+    "planEyebrow": "01 · PLAN THE BASICS",
+    "planTitle": "Start with timing, children’s needs, and the day’s conditions.",
+    "planCards": [
+      [
+        "Best time",
+        "Choose a time that fits your group and the daily forecast. Check with the venue before departure, especially during holidays or bad weather."
+      ],
+      [
+        "Suggested duration",
+        "Allow 3–5 hours as a planning suggestion, not an official duration or assurance that every attraction can be used. Adjust to your group, open areas and weather."
+      ],
+      [
+        "Tickets & cost",
+        "Current admission prices are unverified. Ask separately about adult/child tickets, validity date, parking, equipment hire, lockers and additional activities. Do not assume one ticket includes everything."
+      ],
+      [
+        "Essentials",
+        "Bring swimwear, towels, non-slip sandals, a change of clothes, a wet-bag, sun protection, drinking water, and children’s essentials."
+      ]
     ],
-    seasonsEyebrow: "QUARTERLY VISIT STRATEGY",
-    seasonsTitle: "When is the best time? A climate-based strategy",
-    seasonsLead: "Tangerang has a tropical pattern with a rainy season (usually Nov–Apr) and a dry season (usually May–Oct). The guidance below follows typical local climate behaviour, not today's forecast. For an open waterpark, afternoon rain and pool conditions can vary; confirm on site. In this managed recreational setting there are no wildlife concerns to worry about.",
-    seasons: [
-      ["Q1 (Dec–Feb)", "Peak rainy season; afternoon showers are common, temperatures are cooler.", "Choose a weekday and arrive early. Bring a rain shell/foldable umbrella and a change of clothes. Open areas may be limited during heavy rain."],
-      ["Q2 (Mar–May)", "Transition; rainfall eases and the weather balance is fairly good.", "A good window for balanced comfort. Watch the daily forecast and pack sun protection for bright middays."],
-      ["Q3 (Jun–Aug)", "Dry season; sunniest and most comfortable, but can be busier.", "The most stable time for water play. Arrive earlier on weekends and prioritise hydration and sun protection."],
-      ["Q4 (Sep–Nov)", "Dry to transition; weather generally stays good before the rains return.", "Late-afternoon visits are often pleasant. Check the weekly rain pattern before you leave."]
+    "experienceEyebrow": "02 · THEME AND WATER PLAY",
+    "experienceTitle": "Visual theme and facilities to check.",
+    "experienceLead": "A Tangerang City Government article dated 25 April 2025 describes a European/windmill theme at Amsterdam Waterpark. It provides thematic context, not a current operating list of pools, slides or sports facilities.",
+    "experienceCards": [
+      [
+        "Visual theme",
+        "Windmills form part of the theme described in the 2025 government article. Reference images do not establish today’s conditions."
+      ],
+      [
+        "Pools and slides",
+        "Ask which areas are open, their depth, age/height restrictions and supervision requirements. No measurements or child policy have been verified here."
+      ],
+      [
+        "Sports and other services",
+        "Sports courts, extra activities, equipment hire and child services are not automatically included in waterpark admission. Confirm each operator, schedule and charge."
+      ]
     ],
-    routesEyebrow: "ROUTES BY VISITOR TYPE",
-    routesTitle: "Three routes shaped around your needs",
-    routesLead: "Choose based on who is coming along and the pace of your trip.",
-    audienceRoutes: [
-      ["Family with children", "Start at the children's and shallow pools, move to the themed water play, then rest in shaded areas. Pack a change of clothes, sun protection, and watch pool depth. Never leave children unsupervised."],
-      ["Photography & nature", "Shoot the windmill in morning/soft light, explore the canal-town aesthetic, and use water reflections. Bring waterproof gear for cameras and avoid peak hours for clean framing."],
-      ["Seniors & easy access", "Favour shallow areas and shaded seating, avoid tall slides, and schedule regular breaks. Check accessible routes and facilities on arrival."]
+    "accessEyebrow": "03 · GETTING THERE",
+    "accessTitle": "Break the journey into three stages: reach Tangerang, connect locally, then check the entrance.",
+    "accessLead": "Use the full address and map pin; check routes, schedules and travel time for your origin and travel day.",
+    "accessCards": [
+      [
+        "From the airport",
+        "If arriving at Soekarno–Hatta, ask a transport provider about a trip to the full Pasar Kemis address. Distance, duration, fare and pickup points have not been verified in this guide."
+      ],
+      [
+        "Rail and bus",
+        "Check the network and timetable with the transport operator on your travel day. No route number, transfer station or direct entrance connection has been confirmed here."
+      ],
+      [
+        "Private or hired vehicle",
+        "Use pin -6.1582786, 106.5835666 and the Villa Tomang Baru Square address. Check current road and entrance access; agree drop-off and return arrangements."
+      ],
+      [
+        "Parking",
+        "Ask about parking availability, location, hours and fees before departure. Follow current signs and staff directions."
+      ]
     ],
-    generalRoutesEyebrow: "GENERAL ROUTES",
-    generalRoutes: [
-      ["Half-day route", "Arrive morning → change → children's/shallow pools (1–1.5 h) → windmill photos → light meal → get ready to leave. Good for short visits or with toddlers."],
-      ["Full-day route", "Arrive morning → explore water play → midday rest → adult pools/slides → themed photos → nearby activity (park/open space) → return. Allow 3–5 hours and daily essentials."]
+    "practicalEyebrow": "04 · SERVICES & FACILITIES",
+    "practicalTitle": "Practical needs before departure",
+    "practicalCards": [
+      [
+        "Toilets & changing",
+        "Bring compact wash essentials. Confirm changing-room and toilet availability or condition on site, especially during busy periods."
+      ],
+      [
+        "Parking",
+        "The public sources checked do not publish permanent visitor-parking rules or tariffs. Ask about availability and follow markings and staff directions; choose a safe drop-off point."
+      ],
+      [
+        "Food & drink",
+        "Check food/drink options, trading hours and outside-food rules directly. No current outlet list or menu has been verified here."
+      ],
+      [
+        "Accommodation",
+        "If staying over, compare accommodation types in the Tangerang area—such as hotels, guesthouses, or family resorts—by budget and distance. Compare independently; this guide names no specific brand."
+      ],
+      [
+        "Shops & daily needs",
+        "For last-minute needs, use a map to filter nearby convenience stores, pharmacies, or markets. Pack personal medication and children's supplies before leaving."
+      ],
+      [
+        "Fuel & charging",
+        "Private-vehicle drivers can check fuel stations or EV charging points in a map app before taking local roads."
+      ],
+      [
+        "Health & safety",
+        "Follow posted operator rules and age/height limits. Ask about supervision, required equipment and emergency assistance; do not assume these are available or included in admission."
+      ]
     ],
-    responsibilityEyebrow: "SCIENCE & VISITOR RESPONSIBILITY",
-    responsibilityTitle: "Safe, healthy water play that respects the place",
-    responsibilityLead: "A short guide based on water-recreation principles and visitor responsibility. Help keep the grounds safe and comfortable for everyone.",
-    responsibilityCards: [
-      ["Water-play safety", "Supervise children at all times, follow height/age rules, and check depth and wet-floor conditions before playing. Don't swim during lightning or when an area is closed."],
-      ["Sun & hydration", "Use sun protection, a hat, and drink enough water. In a tropical climate, dehydration and sunstroke can come quickly even when it's cloudy."],
-      ["Cleanliness & environment", "Bin your litter, reduce single-use plastic, and don't use soap/shampoo in public pools. Clean facilities keep everyone comfortable."],
-      ["Rules & other visitors", "Follow staff directions, keep queues orderly, and respect other families' comfort. Report unsafe conditions to staff."]
+    "mapEyebrow": "05 · MAP AND CONTACT",
+    "mapTitle": "Let the map take care of the final turns.",
+    "mapLead": "The map helps locate the Pasar Kemis address. The telephone above was listed on Maps on 19 October 2026; this is not verification of an official operator channel.",
+    "faqEyebrow": "06 · FAQ",
+    "faqTitle": "Short answers to the questions visitors ask most.",
+    "faqs": [
+      [
+        "Where is Amsterdam Waterpark?",
+        "At Villa Tomang Baru Square, Jl. Villa Tomang Baru No.1, Kuta Jaya, Pasar Kemis, Tangerang Regency, Banten 15561, Indonesia. Use pin -6.1582786, 106.5835666; this is not Amsterdam in the Netherlands."
+      ],
+      [
+        "How much are admission tickets?",
+        "Current admission prices are unverified. Ask separately about adult/child tickets, validity date, parking, equipment hire, lockers and additional activities. Do not assume one ticket includes everything."
+      ],
+      [
+        "What are the opening hours?",
+        "Google Maps on 19 October 2026 displayed daily 08:00–17:00. This dated listing does not guarantee every facility operates; check again before departure."
+      ],
+      [
+        "Are children’s pools and slides open?",
+        "Ask which areas are open, their depth, age/height restrictions and supervision requirements. No measurements or child policy have been verified here."
+      ],
+      [
+        "Are sports facilities included in admission?",
+        "Sports courts, extra activities, equipment hire and child services are not automatically included in waterpark admission. Confirm each operator, schedule and charge."
+      ],
+      [
+        "How do I reach the venue?",
+        "Use the full address and map pin; check routes, schedules and travel time for your origin and travel day. Check the network and timetable with the transport operator on your travel day. No route number, transfer station or direct entrance connection has been confirmed here."
+      ],
+      [
+        "Are parking and lockers available?",
+        "Parking and locker availability, capacity and charges have not been verified here. Ask staff separately before buying a ticket."
+      ],
+      [
+        "Is this the official website?",
+        "No. This is an independent guide; it does not sell tickets or represent the operator. Maps and the government article are linked within their respective limits."
+      ]
+    ],
+    "sourceTitle": "Sources and information limits",
+    "sourceLead": "Location, phone, rating and hours are a Google Maps snapshot dated 19 October 2026. The Tangerang City Government article of 25 April 2025 supports thematic context only. Ticket-reseller links are not verified official prices; the legacy Instagram account has not been verified as an operator channel.",
+    "sourceLabels": [
+      "Google Maps",
+      "Government article · 2025",
+      "Third-party ticket seller",
+      "Unverified Instagram account"
+    ],
+    "photoCredits": [
+      "Reference image; existing attribution: Traveloka. Photo location and date have not been independently verified; current conditions may differ.",
+      "Reference image; existing attribution: Wanderboat. Photo location and date have not been independently verified; current conditions may differ.",
+      "Reference image; existing attribution: Tripadvisor. Photo location and date have not been independently verified; current conditions may differ.",
+      "Reference image; existing attribution: Tripadvisor. Photo location and date have not been independently verified; current conditions may differ."
+    ],
+    "footer": "This is an independent, non-commercial visitor-information guide. It is not affiliated with Amsterdam Waterpark, government, or any official organisation.",
+    "footerNote": "Information is based on public records and can change. Always confirm important details before travelling.",
+    "legal": [
+      "Privacy Policy",
+      "Terms of Use",
+      "Cookie Settings"
+    ],
+    "copyright": "© 2026 Amsterdam Waterpark Visitor Guide. Original content protected.",
+    "sources": [
+      "View the dated listing",
+      "Read thematic context",
+      "Check seller conditions",
+      "Confirm identity before relying on it"
+    ],
+    "weatherEyebrow": "TODAY'S WEATHER",
+    "weatherTitle": "Regional forecast for visit planning",
+    "weatherLead": "Open-Meteo forecast near the map pin; not an on-site sensor or confirmation that facilities are open. Check the data time and operator guidance.",
+    "storyEyebrow": "STORY & THEME",
+    "storyTitle": "Why a Dutch theme? The concept and its context",
+    "storyLead": "A themed name does not move the address from Pasar Kemis, Indonesia.",
+    "storyBody": [
+      "The Amsterdam name refers to the visual theme described in the 2025 government article. The checked address is in Pasar Kemis, Tangerang Regency, Banten, Indonesia.",
+      "No opening year, founder or facility history is asserted without a traceable source. Reference images do not replace confirmation of present conditions."
+    ],
+    "storyCards": [
+      [
+        "Theme, not a European location",
+        "Use the Pasar Kemis address for navigation."
+      ],
+      [
+        "Sourced context",
+        "The 2025 government article discusses theme, not current facilities."
+      ],
+      [
+        "Present conditions",
+        "Confirm access and services directly before travelling."
+      ]
+    ],
+    "seasonsEyebrow": "QUARTERLY VISIT STRATEGY",
+    "seasonsTitle": "Plan flexibly for changing weather",
+    "seasonsLead": "Forecasts are regional guidance, not poolside measurements or an opening decision. No month is guaranteed rain-free. Follow the operator’s notices on your visit day.",
+    "seasons": [
+      [
+        "Before departure",
+        "Check the forecast",
+        "Review rain and thunderstorm information, then confirm open activities."
+      ],
+      [
+        "During rain",
+        "Follow staff directions",
+        "Do not assume all attractions continue operating."
+      ],
+      [
+        "During heat",
+        "Prepare personal essentials",
+        "Pack sun protection and drinks subject to venue rules."
+      ],
+      [
+        "If plans change",
+        "Check ticket conditions",
+        "Ask the seller about date changes or cancellation terms before paying."
+      ]
+    ],
+    "routesEyebrow": "ROUTES BY VISITOR TYPE",
+    "routesTitle": "Three routes shaped around your needs",
+    "routesLead": "Choose based on who is coming along and the pace of your trip.",
+    "audienceRoutes": [
+      [
+        "With children",
+        "First ask about age/height limits, depth and supervision. Use only open areas that meet operator rules."
+      ],
+      [
+        "Photography",
+        "Use permitted areas and respect other visitors’ privacy. Guide images do not guarantee access to the same view or facilities."
+      ],
+      [
+        "Access needs",
+        "Ask about step-free paths, rest areas and suitable changing facilities before travelling. Shallow areas are not automatically suitable for every visitor."
+      ]
+    ],
+    "generalRoutesEyebrow": "GENERAL ROUTES",
+    "generalRoutes": [
+      [
+        "A short visit",
+        "Suggestion: confirm tickets → review rules → choose open areas → rest → leave. No attraction sequence is guaranteed."
+      ],
+      [
+        "More time available",
+        "Allow 3–5 hours as a planning suggestion including preparation and breaks. Adjust to actual open areas, your group and weather."
+      ]
+    ],
+    "responsibilityEyebrow": "SCIENCE & VISITOR RESPONSIBILITY",
+    "responsibilityTitle": "Rules and preparations for your visit",
+    "responsibilityLead": "Prioritise venue rules, the day’s conditions and your group’s needs.",
+    "responsibilityCards": [
+      [
+        "Water-play safety",
+        "Supervise children at all times, follow height/age rules, and check depth and wet-floor conditions before playing. Don't swim during lightning or when an area is closed."
+      ],
+      [
+        "Sun & hydration",
+        "Pack sun protection, drinks and personal essentials subject to venue rules. Adjust activities to your own circumstances."
+      ],
+      [
+        "Cleanliness & environment",
+        "Bin your litter, reduce single-use plastic, and don't use soap/shampoo in public pools. Clean facilities keep everyone comfortable."
+      ],
+      [
+        "Rules & other visitors",
+        "Follow staff directions, keep queues orderly, and respect other families' comfort. Report unsafe conditions to staff."
+      ]
     ]
   }
 } as const;
-
 export type Language = keyof typeof content;
