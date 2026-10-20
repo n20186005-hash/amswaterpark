@@ -7,21 +7,19 @@ export const site = {
   phone: "+62 21 5924434",
   mapsUrl: "https://maps.app.goo.gl/4hNdrBTz146SetbF9",
   mapEmbedUrl: "https://www.google.com/maps?q=Amsterdam+Waterpark,+Villa+Tomang+Baru+Square,+Jl.+Villa+Tomang+Baru+No.1,+Kuta+Jaya,+Pasar+Kemis,+Tangerang,+Banten+15561,+Indonesia&z=15&output=embed&hl=id",
-  reviewRating: 4.2,
-  reviewCount: 5438,
-  openingHours: "08:00-17:00",
-  ticketFrom: "Rp35.000",
+  reviewRating: 4.3,
+  reviewCount: 5466,
   gaId: "G-HXM22WWPKP",
-  feedbackEmail: "claritleonelmnicol@gmail.com",
   sources: {
     maps: "https://maps.app.goo.gl/4hNdrBTz146SetbF9",
+    government: "https://www.tangerangkota.go.id/berita/detail/51213/weekend-seru-bareng-keluarga-ayo-coba-destinasi-favorit-di-kota-tangerang",
     tickets: "https://www.traveloka.com/id-id/activities/indonesia/product/i-amsterdam-waterpark-tickets-2000819440972",
     instagram: "https://www.instagram.com/iamsterdamwaterpark/",
     reviews: "https://www.tripadvisor.co.id/Attraction_Review-g1493703-d8754895-Reviews-I_Amsterdam_Waterpark-Tangerang_Banten_Province_Java.html"
   },
   images: {
     entrance: "/entrance-traveloka.jpeg",
-    kidsPool: "/kids-pool-wanderboat.jpg",
+    kidsPool: "/kids-pool-wanderboat.webp",
     pool: "/pool-tripadvisor.jpg",
     windmill: "/windmill-tripadvisor.jpg"
   },
@@ -34,6 +32,5 @@ export const site = {
   country: "Indonesia",
   countryCode: "ID",
   postalCode: "15561",
-  nearbyLandmarks: ["Boulevard Pasar Kemis", "Tangerang city centre"],
   govtTourismUrl: "https://bantenprov.go.id"
 } as const;

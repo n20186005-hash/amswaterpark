@@ -18,8 +18,8 @@ const enPath = isEn ? path : (path === "/" ? "/en/" : `/en${path}`);
 const idUrl = idPath === "/" ? `${base}/` : `${base}${idPath}`;
 const enUrl = enPath === "/" ? `${base}/` : `${base}${enPath}`;
 const canonical = Astro.site ? new URL(path, Astro.site).href : undefined;
-const ogImage = `${site.images.entrance}`;
-const ogImageAlt = `${site.name} in ${site.city}`;
+const ogImage = new URL(site.images.entrance, `${base}/`).href;
+const ogImageAlt = lang === "id" ? "Gambar referensi kincir angin dan huruf I amsterdam" : "Reference image of a windmill and I amsterdam lettering";
 const ogLocale = lang === "id" ? "id_ID" : "en_US";
 ---
 <!doctype html>
@@ -39,9 +39,9 @@ const ogLocale = lang === "id" ? "id_ID" : "en_US";
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     {canonical && <link rel="canonical" href={canonical} />}
     {canonical && <meta property="og:url" content={canonical} />}
-    <link rel="alternate" hreflang="id" href={idUrl} />
-    <link rel="alternate" hreflang="en" href={enUrl} />
-    <link rel="alternate" hreflang="x-default" href={idUrl} />
+    {path !== "/404.html" && <link rel="alternate" hreflang="id" href={idUrl} />}
+    {path !== "/404.html" && <link rel="alternate" hreflang="en" href={enUrl} />}
+    {path !== "/404.html" && <link rel="alternate" hreflang="x-default" href={idUrl} />}
     {noindex && <meta name="robots" content="noindex, follow" />}
     <meta property="og:type" content="website" />
     <meta property="og:locale" content={ogLocale} />
@@ -59,24 +59,7 @@ const ogLocale = lang === "id" ? "id_ID" : "en_US";
   </head>
   <body>
     <slot />
-    <script is:inline define:vars={{ gaId: site.gaId }}>
-      const analyticsAllowed = localStorage.getItem("awp-analytics") === "granted";
-      if (analyticsAllowed && !document.querySelector("script[data-awp-ga]")) {
-        const script = document.createElement("script");
-        script.async = true;
-        script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
-        script.dataset.awpGa = "true";
-        document.head.appendChild(script);
-        window.dataLayer = window.dataLayer || [];
-        window.gtag = function () { window.dataLayer.push(arguments); };
-        window.gtag("js", new Date());
-        window.gtag("config", gaId, { anonymize_ip: true });
-      }
-    </script>
-    <script is:inline>
-      if (import.meta.env.PROD && "serviceWorker" in navigator) {
-        window.addEventListener("load", () => navigator.serviceWorker.register("/sw.js").catch(() => {}));
-      }
-    </script>
+    <script is:inline src="/consent.js"></script>
+    <script is:inline>if ("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("/sw.js").catch(()=>{}));</script>
   </body>
 </html>

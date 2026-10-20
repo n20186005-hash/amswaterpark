@@ -10,25 +10,18 @@ const otherHref = lang === "id" ? "/en/" : "/";
 const legalHref = (slug: string) => lang === "id" ? `/${slug}/` : `/en/${slug}/`;
 const pagePath = lang === "id" ? "/" : "/en/";
 const siteUrl = (Astro.site ? Astro.site.href : "https://amswaterpark.com").replace(/\/$/, "");
-const imageUrl = new URL(site.images.entrance, `${siteUrl}/`).href;
 const attractionLd = {
   "@context": "https://schema.org",
-  "@type": ["TouristAttraction", "LocalBusiness"],
+  "@type": "TouristAttraction",
   "@id": `${siteUrl}/#attraction`,
   name: site.name,
   alternateName: [site.shortName, `${site.city} ${site.name}`],
   description: c.description,
-  url: siteUrl,
-  image: [imageUrl],
-  isAccessibleForFree: false,
-  priceRange: "Rp35,000+",
+  url: siteUrl + pagePath,
   address: { "@type": "PostalAddress", streetAddress: "Villa Tomang Baru Square, Jl. Villa Tomang Baru No.1", addressLocality: site.city, addressRegion: site.stateProvince, postalCode: site.postalCode, addressCountry: site.countryCode },
   geo: { "@type": "GeoCoordinates", latitude: site.latitude, longitude: site.longitude },
-  telephone: site.phone,
-  openingHours: site.openingHours,
   hasMap: site.mapsUrl,
-  sameAs: [site.mapsUrl, site.govtTourismUrl, site.sources.instagram],
-  aggregateRating: { "@type": "AggregateRating", ratingValue: site.reviewRating, reviewCount: site.reviewCount, bestRating: 5, worstRating: 1 }
+
 };
 const breadcrumbLd = {
   "@context": "https://schema.org",
@@ -41,10 +34,10 @@ const breadcrumbLd = {
   ]
 };
 const faqLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: c.faqs.map(([name, text]) => ({ "@type": "Question", name, acceptedAnswer: { "@type": "Answer", text } })) };
-const altEntrance = lang === "id" ? `${site.name} - Pemandangan utama di ${site.city}, ${site.country}` : `${site.name} - Main view in ${site.city}, ${site.country}`;
-const altKids = lang === "id" ? `Area permainan air anak ${site.name} di ${site.city}` : `${site.name} children's water-play area in ${site.city}`;
-const altPool = lang === "id" ? `Kolam dan area permainan ${site.name} di ${site.city}` : `${site.name} pool and water-play area in ${site.city}`;
-const altWindmill = lang === "id" ? `Landmark kincir angin ${site.name} di ${site.city}` : `${site.name} windmill landmark in ${site.city}`;
+const altEntrance = lang === "id" ? "Gambar referensi kincir angin dan huruf I amsterdam" : "Reference image of a windmill and I amsterdam lettering";
+const altKids = lang === "id" ? "Gambar referensi perosotan biru dan struktur permainan di air" : "Reference image of a blue slide and play structure in water";
+const altPool = lang === "id" ? "Gambar referensi kolam dengan perosotan berwarna" : "Reference image of a pool with coloured slides";
+const altWindmill = lang === "id" ? "Gambar referensi menara kincir angin di dekat kolam" : "Reference image of a windmill-style tower beside a pool";
 const photos = [
   [site.images.entrance, c.photoCredits[0]], [site.images.kidsPool, c.photoCredits[1]], [site.images.pool, c.photoCredits[2]], [site.images.windmill, c.photoCredits[3]]
 ];
@@ -53,14 +46,14 @@ const photos = [
 <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
 <script is:inline type="application/ld+json" set:html={JSON.stringify(faqLd)} />
 
-<main id="top" class="overflow-x-hidden">
+<main id="top">
   <header class="sticky top-0 z-40 border-b border-canal/10 bg-white/90 backdrop-blur">
-    <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 lg:px-8">
+    <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-5 py-3 lg:px-8">
       <a href="#top" class="flex items-center gap-3 text-ink no-underline">
         <img src="/favicon.svg" alt="" class="h-11 w-11" />
         <span><strong class="block font-display text-xl leading-none">Amsterdam Waterpark</strong><span class="mt-1 block text-[.62rem] font-extrabold tracking-[.17em] text-canal">{c.guideMark}</span></span>
       </a>
-      <nav class="hidden items-center gap-5 xl:flex" aria-label={c.navigationAria}>
+      <nav class="site-navigation flex flex-wrap items-center gap-5" aria-label={c.navigationAria}>
         {c.nav.map((item, index) => <a href={["#top", "#weather", "#plan", "#experience", "#access", "#practical", "#faq"][index]} class="text-xs font-bold text-ink/75 no-underline hover:text-canal">{item}</a>)}
       </nav>
       <a href={otherHref} class="inline-flex items-center gap-2 rounded-full border border-canal/20 bg-skywash px-4 py-2 text-xs font-extrabold text-canal no-underline">◎ {c.languageSwitch}</a>
@@ -89,7 +82,7 @@ const photos = [
 
   <section id="plan" class="scroll-mt-20 px-5 py-20 lg:px-8 lg:py-28"><div class="mx-auto max-w-7xl"><p class="text-[.68rem] font-extrabold tracking-[.18em] text-canal">{c.planEyebrow}</p><div class="mt-5 grid gap-8 lg:grid-cols-[1fr_.65fr]"><h2 class="max-w-3xl font-display text-5xl leading-[.95] text-ink md:text-7xl">{c.planTitle}</h2><p class="self-end border-l-2 border-sunorange pl-5 leading-7 text-ink/70">{c.factNote}</p></div><div class="mt-14 grid gap-px overflow-hidden border border-canal/15 bg-canal/15 md:grid-cols-2">{c.planCards.map(([title, detail], index) => <article class="relative bg-white p-7 lg:p-9"><span class="text-sm font-extrabold text-sunorange">0{index + 1}</span><h3 class="mt-6 font-display text-3xl text-ink">{title}</h3><p class="mt-3 text-sm leading-7 text-ink/70">{detail}</p></article>)}</div></div></section>
 
-  <section id="experience" class="scroll-mt-20 bg-canal px-5 py-20 text-white lg:px-8 lg:py-28"><div class="mx-auto max-w-7xl"><div class="grid gap-8 lg:grid-cols-[.8fr_1.2fr]"><div><p class="text-[.68rem] font-extrabold tracking-[.18em] text-skywash">{c.experienceEyebrow}</p><h2 class="mt-4 font-display text-5xl leading-[.95] md:text-7xl">{c.experienceTitle}</h2></div><p class="self-end max-w-2xl text-lg leading-8 text-white/80">{c.experienceLead}</p></div><div class="mt-14 grid gap-6 md:grid-cols-3">{c.experienceCards.map(([title, detail], index) => <article class="border-t border-white/35 pt-6"><span class="text-sm font-extrabold text-sunorange">0{index + 1}</span><h3 class="mt-6 font-display text-3xl">{title}</h3><p class="mt-3 text-sm leading-7 text-white/80">{detail}</p></article>)}</div><div class="mt-14 grid gap-5 md:grid-cols-3"><figure class="m-0 overflow-hidden"><img src={photos[1][0]} alt={altKids} class="photo-shift aspect-[3/4] h-full w-full object-cover" loading="lazy" /><figcaption class="photo-credit bg-white px-3 py-2">{photos[1][1]}</figcaption></figure><figure class="m-0 overflow-hidden"><img src={photos[2][0]} alt={altPool} class="photo-shift aspect-[3/4] h-full w-full object-cover" loading="lazy" /><figcaption class="photo-credit bg-white px-3 py-2">{photos[2][1]}</figcaption></figure><figure class="m-0 overflow-hidden"><img src={photos[3][0]} alt={altWindmill} class="photo-shift aspect-[3/4] h-full w-full object-cover" loading="lazy" /><figcaption class="photo-credit bg-white px-3 py-2">{photos[3][1]}</figcaption></figure></div></div></section>
+  <section id="experience" class="scroll-mt-20 bg-canal px-5 py-20 text-white lg:px-8 lg:py-28"><div class="mx-auto max-w-7xl"><div class="grid gap-8 lg:grid-cols-[.8fr_1.2fr]"><div><p class="text-[.68rem] font-extrabold tracking-[.18em] text-skywash">{c.experienceEyebrow}</p><h2 class="mt-4 font-display text-5xl leading-[.95] md:text-7xl">{c.experienceTitle}</h2></div><p class="self-end max-w-2xl text-lg leading-8 text-white/80">{c.experienceLead}</p></div><div class="mt-14 grid gap-6 md:grid-cols-3">{c.experienceCards.map(([title, detail], index) => <article class="border-t border-white/35 pt-6"><span class="text-sm font-extrabold text-sunorange">0{index + 1}</span><h3 class="mt-6 font-display text-3xl">{title}</h3><p class="mt-3 text-sm leading-7 text-white/80">{detail}</p></article>)}</div><div class="mt-14 grid gap-5 md:grid-cols-3"><figure class="m-0 overflow-hidden"><img src={photos[1][0]} alt={altKids} class="photo-shift aspect-[3/4] w-full object-cover" loading="lazy" /><figcaption class="photo-credit bg-white px-3 py-2">{photos[1][1]}</figcaption></figure><figure class="m-0 overflow-hidden"><img src={photos[2][0]} alt={altPool} class="photo-shift aspect-[3/4] w-full object-cover" loading="lazy" /><figcaption class="photo-credit bg-white px-3 py-2">{photos[2][1]}</figcaption></figure><figure class="m-0 overflow-hidden"><img src={photos[3][0]} alt={altWindmill} class="photo-shift aspect-[3/4] w-full object-cover" loading="lazy" /><figcaption class="photo-credit bg-white px-3 py-2">{photos[3][1]}</figcaption></figure></div></div></section>
 
   <section id="access" class="scroll-mt-20 px-5 py-20 lg:px-8 lg:py-28"><div class="mx-auto max-w-7xl"><p class="text-[.68rem] font-extrabold tracking-[.18em] text-canal">{c.accessEyebrow}</p><div class="mt-5 grid gap-8 lg:grid-cols-[1fr_.72fr]"><h2 class="font-display text-5xl leading-[.95] text-ink md:text-7xl">{c.accessTitle}</h2><p class="self-end text-lg leading-8 text-ink/70">{c.accessLead}</p></div><div class="mt-14 grid gap-px overflow-hidden border-y border-canal/20 md:grid-cols-2">{c.accessCards.map(([title, detail], index) => <article class="border-b border-canal/20 p-7 md:border-r md:p-9"><span class="text-sm font-extrabold text-sunorange">0{index + 1}</span><h3 class="mt-6 font-display text-3xl text-ink">{title}</h3><p class="mt-3 text-sm leading-7 text-ink/70">{detail}</p></article>)}</div></div></section>
 
@@ -110,7 +103,7 @@ const photos = [
       <p class="text-[.68rem] font-extrabold tracking-[.18em] text-skywash">{c.seasonsEyebrow}</p>
       <h2 class="mt-4 max-w-3xl font-display text-5xl leading-[.95] text-white md:text-7xl">{c.seasonsTitle}</h2>
       <p class="mt-6 max-w-3xl text-lg leading-8 text-white/80">{c.seasonsLead}</p>
-      <div class="mt-12 grid gap-px overflow-hidden border border-white/25 bg-white/15 md:grid-cols-2 xl:grid-cols-4">{c.seasons.map(([quarter, climate, advice], index) => <article class="bg-canal p-7"><span class="text-sm font-extrabold text-sunorange">{quarter}</span><h3 class="mt-4 font-display text-2xl text-white">{climate}</h3><p class="mt-3 text-sm leading-7 text-white/80">{advice}</p></article>)}</div>
+      <div class="mt-12 grid gap-px overflow-hidden border border-white/25 bg-white/15 md:grid-cols-2 xl:grid-cols-4">{c.seasons.map(([quarter, climate, advice]) => <article class="bg-canal p-7"><span class="text-sm font-extrabold text-sunorange">{quarter}</span><h3 class="mt-4 font-display text-2xl text-white">{climate}</h3><p class="mt-3 text-sm leading-7 text-white/80">{advice}</p></article>)}</div>
     </div>
   </section>
 
@@ -127,7 +120,7 @@ const photos = [
 
   <section id="practical" class="scroll-mt-20 bg-orange-50 px-5 py-20 lg:px-8 lg:py-28"><div class="mx-auto max-w-7xl"><p class="text-[.68rem] font-extrabold tracking-[.18em] text-sunorange">{c.practicalEyebrow}</p><h2 class="mt-4 max-w-3xl font-display text-5xl leading-[.95] text-ink md:text-7xl">{c.practicalTitle}</h2><div class="mt-14 grid gap-x-10 border-t border-sunorange/25 md:grid-cols-2 xl:grid-cols-3">{c.practicalCards.map(([title, detail], index) => <article class="border-b border-sunorange/25 py-7"><span class="text-sm font-extrabold text-sunorange">0{index + 1}</span><h3 class="mt-5 font-display text-3xl text-ink">{title}</h3><p class="mt-3 text-sm leading-7 text-ink/70">{detail}</p></article>)}</div></div></section>
 
-  <section class="px-5 py-20 lg:px-8"><div class="mx-auto grid max-w-7xl overflow-hidden bg-skywash lg:grid-cols-[.8fr_1.2fr]"><div class="p-8 lg:p-14"><p class="text-[.68rem] font-extrabold tracking-[.18em] text-canal">{c.mapEyebrow}</p><h2 class="mt-4 font-display text-5xl leading-[.95] text-ink">{c.mapTitle}</h2><p class="mt-6 max-w-md leading-7 text-ink/70">{c.mapLead}</p><a href={site.mapsUrl} target="_blank" rel="noreferrer" class="mt-8 inline-flex bg-canal px-5 py-4 text-sm font-extrabold text-white no-underline hover:bg-ink">{c.maps} ↗</a></div><iframe title="Amsterdam Waterpark map" src={site.mapEmbedUrl} class="min-h-[400px] w-full border-0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><p class="mx-auto mt-6 max-w-7xl leading-7 text-ink/70">{c.nearbyLead} <strong>{site.nearbyLandmarks[0]}</strong> {lang === "id" ? "dan" : "and"} <strong>{site.nearbyLandmarks[1]}</strong>.</p></section>
+  <section class="px-5 py-20 lg:px-8"><div class="mx-auto grid max-w-7xl overflow-hidden bg-skywash lg:grid-cols-[.8fr_1.2fr]"><div class="p-8 lg:p-14"><p class="text-[.68rem] font-extrabold tracking-[.18em] text-canal">{c.mapEyebrow}</p><h2 class="mt-4 font-display text-5xl leading-[.95] text-ink">{c.mapTitle}</h2><p class="mt-6 max-w-md leading-7 text-ink/70">{c.mapLead}</p><a href={site.mapsUrl} target="_blank" rel="noreferrer" class="mt-8 inline-flex bg-canal px-5 py-4 text-sm font-extrabold text-white no-underline hover:bg-ink">{c.maps} ↗</a></div><iframe title="Amsterdam Waterpark map" src={site.mapEmbedUrl} class="min-h-[400px] w-full border-0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><p class="mx-auto mt-6 max-w-7xl leading-7 text-ink/70">{c.nearbyLead}</p></section>
 
   <section id="responsibility" class="scroll-mt-20 bg-orange-50 px-5 py-20 lg:px-8 lg:py-28">
     <div class="mx-auto max-w-7xl">
@@ -140,9 +133,7 @@ const photos = [
 
   <section id="faq" class="scroll-mt-20 px-5 py-20 lg:px-8 lg:py-28"><div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[.7fr_1.3fr]"><div><p class="text-[.68rem] font-extrabold tracking-[.18em] text-canal">{c.faqEyebrow}</p><h2 class="mt-4 font-display text-5xl leading-[.95] text-ink md:text-6xl">{c.faqTitle}</h2></div><div class="border-t border-canal/20">{c.faqs.map(([question, answer], index) => <details class="group border-b border-canal/20 py-5" open={index === 0}><summary class="flex cursor-pointer list-none items-center gap-4 font-display text-2xl leading-tight text-ink md:text-3xl"><span class="font-sans text-sm font-extrabold text-sunorange">0{index + 1}</span><span class="flex-1">{question}</span><span class="font-sans text-canal group-open:rotate-45">+</span></summary><p class="mt-4 pl-8 text-sm leading-7 text-ink/70">{answer}</p></details>)}</div></div></section>
 
-  <section class="bg-ink px-5 py-20 text-white lg:px-8"><div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_.7fr]"><div><p class="text-[.68rem] font-extrabold tracking-[.18em] text-skywash">{c.feedbackEyebrow}</p><h2 class="mt-4 max-w-3xl font-display text-5xl leading-[.95] md:text-7xl">{c.feedbackTitle}</h2><p class="mt-6 max-w-2xl text-lg leading-8 text-white/75">{c.feedbackLead}</p></div><a href={`mailto:${site.feedbackEmail}?subject=Amsterdam%20Waterpark%20guide%20feedback`} class="self-end border border-white/25 bg-white/10 p-7 text-white no-underline hover:bg-white/15"><span class="block text-sm font-extrabold tracking-wide text-skywash">{site.feedbackEmail}</span><span class="mt-8 flex items-end justify-between font-display text-3xl">{c.feedback}<span>↗</span></span></a></div></section>
-
-  <section class="px-5 py-16 lg:px-8"><div class="mx-auto max-w-7xl"><p class="text-[.68rem] font-extrabold tracking-[.18em] text-canal">{c.sourcesMeta}</p><h2 class="mt-3 font-display text-4xl text-ink">{c.sourceTitle}</h2><p class="mt-5 max-w-4xl leading-7 text-ink/70">{c.sourceLead}</p><div class="mt-8 grid gap-3 md:grid-cols-4">{[site.sources.maps, site.sources.tickets, site.sources.instagram, site.sources.reviews].map((source, index) => <a href={source} target="_blank" rel="noreferrer" class="border border-canal/20 p-4 text-sm font-bold text-canal no-underline hover:border-canal hover:bg-skywash">{c.sourceLabels[index]} ↗<span class="mt-2 block text-xs font-normal text-ink/60">{c.sources[index]}</span></a>)}</div><p class="mt-6 max-w-4xl leading-7 text-ink/70">{c.govtLead} <a href={site.govtTourismUrl} target="_blank" rel="noopener noreferrer" class="font-bold text-canal no-underline">{site.country} / {site.stateProvince} Official Portal ↗</a>.</p></div></section>
+  <section class="px-5 py-16 lg:px-8"><div class="mx-auto max-w-7xl"><p class="text-[.68rem] font-extrabold tracking-[.18em] text-canal">{c.sourcesMeta}</p><h2 class="mt-3 font-display text-4xl text-ink">{c.sourceTitle}</h2><p class="mt-5 max-w-4xl leading-7 text-ink/70">{c.sourceLead}</p><div class="mt-8 grid gap-3 md:grid-cols-4">{[site.sources.maps, site.sources.government, site.sources.tickets, site.sources.instagram].map((source, index) => <a href={source} target="_blank" rel="noreferrer" class="border border-canal/20 p-4 text-sm font-bold text-canal no-underline hover:border-canal hover:bg-skywash">{c.sourceLabels[index]} ↗<span class="mt-2 block text-xs font-normal text-ink/60">{c.sources[index]}</span></a>)}</div><p class="mt-6 max-w-4xl leading-7 text-ink/70">{c.govtLead} <a href={site.govtTourismUrl} target="_blank" rel="noopener noreferrer" class="font-bold text-canal no-underline">{site.country} / {site.stateProvince} Official Portal ↗</a>.</p></div></section>
 
   <footer class="border-t border-canal/10 bg-white px-5 py-12 lg:px-8"><div class="mx-auto grid max-w-7xl gap-8 md:grid-cols-[1.2fr_.8fr_.5fr]"><div><div class="flex items-center gap-3"><img src="/favicon.svg" alt="" class="h-11 w-11" /><span class="font-display text-2xl text-ink">Amsterdam Waterpark</span></div><p class="mt-5 max-w-lg text-sm leading-6 text-ink/70">{c.footer}</p><p class="mt-3 text-xs leading-5 text-ink/55">{c.footerNote}</p></div><div><p class="text-[.68rem] font-extrabold tracking-[.16em] text-canal">{c.legalMeta}</p><div class="mt-4 grid gap-3 text-sm font-bold">{["privacy", "terms", "cookies"].map((slug, index) => <a href={legalHref(slug)} class="text-ink no-underline hover:text-canal">{c.legal[index]}</a>)}</div></div><div><p class="text-[.68rem] font-extrabold tracking-[.16em] text-canal">{c.informationMeta}</p><p class="mt-4 text-xs leading-5 text-ink/55">{c.copyright}</p></div></div></footer>
 </main>

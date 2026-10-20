@@ -34,7 +34,7 @@ const c = content[lang];
         umbrellaYes: "Siang hari: bawa payung atau jas hujan.",
         umbrellaNo: "Peluang hujan rendah; nikmati kunjungan.",
         sunYes: "Matahari terik: gunakan pelindung matahari & minum cukup.",
-        mon: ["Sen", "Sel", "Rab", "Kam", "Jum", "Sab", "Min"]
+        mon: ["Min", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"]
       },
       en: {
         loading: "Loading…",
@@ -48,7 +48,7 @@ const c = content[lang];
         umbrellaYes: "By day: bring an umbrella or rain shell.",
         umbrellaNo: "Low rain chance; enjoy your visit.",
         sunYes: "Strong sun: use sun protection & drink enough water.",
-        mon: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+        mon: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
       }
     }[lang];
 
@@ -64,7 +64,7 @@ const c = content[lang];
       85: ["🌨️", "Salju sesekali"], 86: ["🌨️", "Salju lebat"],
       95: ["⛈️", "Badai petir"], 96: ["⛈️", "Badai petir & hujan es"], 99: ["⛈️", "Badai petir & hujan es"]
     };
-    const wx = (code: number): [string, string] => WMO[code] || ["🌡️", "—"];
+    const wx = (code: number): [string, string] => { const entry=WMO[code] || ["🌡️", "—"]; return [entry[0],lang === "en" ? ({0:"Clear",1:"Mainly clear",2:"Partly cloudy",3:"Overcast",45:"Fog",48:"Rime fog",51:"Light drizzle",53:"Drizzle",55:"Heavy drizzle",56:"Freezing drizzle",57:"Freezing drizzle",61:"Light rain",63:"Rain",65:"Heavy rain",66:"Freezing rain",67:"Freezing rain",71:"Light snow",73:"Snow",75:"Heavy snow",77:"Snow grains",80:"Rain showers",81:"Rain showers",82:"Heavy rain showers",85:"Snow showers",86:"Heavy snow showers",95:"Thunderstorm",96:"Thunderstorm with hail",99:"Thunderstorm with hail"} as Record<number,string>)[code] || "—" : entry[1]]; };
 
     function render(d: any) {
       const cur = d.current;
@@ -101,7 +101,7 @@ const c = content[lang];
             <dl class="mt-5 grid grid-cols-2 gap-3 text-sm">
               <div><dt class="text-ink/55">${t.feels}</dt><dd class="font-bold text-ink">${Math.round(cur.apparent_temperature)}°</dd></div>
               <div><dt class="text-ink/55">${t.humidity}</dt><dd class="font-bold text-ink">${cur.relative_humidity_2m}%</dd></div>
-              <div><dt class="text-ink/55">${t.wind}</dt><dd class="font-bold text-ink">${Math.round(cur.wind_speed_10m)} km/j</dd></div>
+              <div><dt class="text-ink/55">${t.wind}</dt><dd class="font-bold text-ink">${Math.round(cur.wind_speed_10m)} ${lang === "id" ? "km/j" : "km/h"}</dd></div>
               <div><dt class="text-ink/55">${t.rain}</dt><dd class="font-bold text-ink">${Math.round(cur.precipitation)} mm</dd></div>
             </dl>
             <p class="mt-5 rounded-xl bg-white/70 p-3 text-sm font-semibold text-ink/80">${advice}</p>
