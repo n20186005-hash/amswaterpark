@@ -9,8 +9,9 @@ export default {async fetch(request,env,ctx){
   if(!['GET','HEAD'].includes(request.method))return new Response(null,{status:405,headers:{Allow:'GET, HEAD'}});
   const response=await weather(ctx);return request.method==='HEAD'?new Response(null,{status:response.status,headers:response.headers}):response;
  }
- const response=await env.ASSETS.fetch(request);
- if(response.status===404){const headers=new Headers(response.headers);headers.set('X-Robots-Tag','noindex, follow');return new Response(response.body,{status:404,headers});}return response;
+ const explicitError=/^\/404(?:\.html)?\/?$/.test(url.pathname);
+ const response=await env.ASSETS.fetch(explicitError?new Request(new URL('/404',url),request):request);
+ if(explicitError||response.status===404){const headers=new Headers(response.headers);headers.set('X-Robots-Tag','noindex, follow');return new Response(request.method==='HEAD'?null:response.body,{status:404,headers});}return response;
 }};
 function safeData(value){
  const keys=['temperature_2m','relative_humidity_2m','apparent_temperature','precipitation','weather_code','wind_speed_10m'];
