@@ -8,9 +8,10 @@ interface Props {
   lang: "id" | "en";
   path?: string;
   noindex?: boolean;
+  enAlternate?: boolean;
 }
 
-const { title, description, lang, path = "/", noindex = false } = Astro.props;
+const { title, description, lang, path = "/", noindex = false, enAlternate = true } = Astro.props;
 const base = (Astro.site ? Astro.site.href : "https://amswaterpark.com").replace(/\/$/, "");
 const isEn = lang === "en";
 const idPath = isEn ? (path.replace(/^\/en/, "") || "/") : path;
@@ -40,7 +41,7 @@ const ogLocale = lang === "id" ? "id_ID" : "en_US";
     {canonical && <link rel="canonical" href={canonical} />}
     {canonical && <meta property="og:url" content={canonical} />}
     {path !== "/404.html" && <link rel="alternate" hreflang="id" href={idUrl} />}
-    {path !== "/404.html" && <link rel="alternate" hreflang="en" href={enUrl} />}
+    {path !== "/404.html" && enAlternate && <link rel="alternate" hreflang="en" href={enUrl} />}
     {path !== "/404.html" && <link rel="alternate" hreflang="x-default" href={idUrl} />}
     {noindex && <meta name="robots" content="noindex, follow" />}
     <meta property="og:type" content="website" />

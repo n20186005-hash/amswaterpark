@@ -2,6 +2,7 @@
 import { site } from "../data/site";
 import { content, type Language } from "../data/content";
 import WeatherSection from "./WeatherSection.astro";
+import TopicCluster from "./TopicCluster.astro";
 
 interface Props { lang: Language; }
 const { lang } = Astro.props;
@@ -57,6 +58,7 @@ const photos = [
         {c.nav.map((item, index) => <a href={["#top", "#weather", "#plan", "#experience", "#access", "#practical", "#faq"][index]} class="text-xs font-bold text-ink/75 no-underline hover:text-canal">{item}</a>)}
       </nav>
       <a href={otherHref} class="inline-flex items-center gap-2 rounded-full border border-canal/20 bg-skywash px-4 py-2 text-xs font-extrabold text-canal no-underline">◎ {c.languageSwitch}</a>
+      {lang === "id" && <a href="/topik/" class="inline-flex items-center gap-2 rounded-full border border-canal/20 bg-skywash px-4 py-2 text-xs font-extrabold text-canal no-underline">Topik</a>}
     </div>
   </header>
 
@@ -134,6 +136,8 @@ const photos = [
   <section id="faq" class="scroll-mt-20 px-5 py-20 lg:px-8 lg:py-28"><div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[.7fr_1.3fr]"><div><p class="text-[.68rem] font-extrabold tracking-[.18em] text-canal">{c.faqEyebrow}</p><h2 class="mt-4 font-display text-5xl leading-[.95] text-ink md:text-6xl">{c.faqTitle}</h2></div><div class="border-t border-canal/20">{c.faqs.map(([question, answer], index) => <details class="group border-b border-canal/20 py-5" open={index === 0}><summary class="flex cursor-pointer list-none items-center gap-4 font-display text-2xl leading-tight text-ink md:text-3xl"><span class="font-sans text-sm font-extrabold text-sunorange">0{index + 1}</span><span class="flex-1">{question}</span><span class="font-sans text-canal group-open:rotate-45">+</span></summary><p class="mt-4 pl-8 text-sm leading-7 text-ink/70">{answer}</p></details>)}</div></div></section>
 
   <section class="px-5 py-16 lg:px-8"><div class="mx-auto max-w-7xl"><p class="text-[.68rem] font-extrabold tracking-[.18em] text-canal">{c.sourcesMeta}</p><h2 class="mt-3 font-display text-4xl text-ink">{c.sourceTitle}</h2><p class="mt-5 max-w-4xl leading-7 text-ink/70">{c.sourceLead}</p><div class="mt-8 grid gap-3 md:grid-cols-4">{[site.sources.maps, site.sources.government, site.sources.tickets, site.sources.instagram].map((source, index) => <a href={source} target="_blank" rel="noreferrer" class="border border-canal/20 p-4 text-sm font-bold text-canal no-underline hover:border-canal hover:bg-skywash">{c.sourceLabels[index]} ↗<span class="mt-2 block text-xs font-normal text-ink/60">{c.sources[index]}</span></a>)}</div><p class="mt-6 max-w-4xl leading-7 text-ink/70">{c.govtLead} <a href={site.govtTourismUrl} target="_blank" rel="noopener noreferrer" class="font-bold text-canal no-underline">{site.country} / {site.stateProvince} Official Portal ↗</a>.</p></div></section>
+
+  {lang === "id" && <TopicCluster />}
 
   <footer class="border-t border-canal/10 bg-white px-5 py-12 lg:px-8"><div class="mx-auto grid max-w-7xl gap-8 md:grid-cols-[1.2fr_.8fr_.5fr]"><div><div class="flex items-center gap-3"><img src="/favicon.svg" alt="" class="h-11 w-11" /><span class="font-display text-2xl text-ink">Amsterdam Waterpark</span></div><p class="mt-5 max-w-lg text-sm leading-6 text-ink/70">{c.footer}</p><p class="mt-3 text-xs leading-5 text-ink/55">{c.footerNote}</p></div><div><p class="text-[.68rem] font-extrabold tracking-[.16em] text-canal">{c.legalMeta}</p><div class="mt-4 grid gap-3 text-sm font-bold">{["privacy", "terms", "cookies"].map((slug, index) => <a href={legalHref(slug)} class="text-ink no-underline hover:text-canal">{c.legal[index]}</a>)}</div></div><div><p class="text-[.68rem] font-extrabold tracking-[.16em] text-canal">{c.informationMeta}</p><p class="mt-4 text-xs leading-5 text-ink/55">{c.copyright}</p></div></div></footer>
 </main>

@@ -27,7 +27,7 @@ export const content = {
     "heroLead": "Amsterdam Waterpark adalah waterpark bertema kota Belanda di Villa Tomang Baru Square, Kuta Jaya. Gunakan panduan ini untuk menyusun kunjungan, lalu konfirmasi detail dinamis sebelum berangkat.",
     "maps": "Buka Google Maps",
     "plan": "Rencanakan kunjungan",
-    "tagVerified": "LOKASI PETA · 19 OKTOBER 2026",
+    "tagVerified": "LOKASI PETA · 29 OKTOBER 2026",
     "tagDynamic": "INFO DINAMIS · CEK SEBELUM BERANGKAT",
     "factTitle": "Informasi inti, dengan batas yang jelas.",
     "factLead": "Snapshot Google Maps diperiksa pada 19 Oktober 2026. Ini bukan situs operator atau daftar harga resmi; tiap fasilitas dapat memiliki syarat dan biaya berbeda.",
@@ -42,15 +42,15 @@ export const content = {
       ],
       [
         "Telepon",
-        "+62 21 5924434 · nomor listing Maps, 19 Oktober 2026"
+        "+62 21 5924434 · nomor listing Maps, 29 Oktober 2026"
       ],
       [
         "Jam yang tampil di peta",
-        "Setiap hari 08.00–17.00 · snapshot 19 Oktober 2026"
+        "Setiap hari 08.00–17.00 · snapshot 29 Oktober 2026"
       ],
       [
         "Rating peta",
-        "4,3 / 5 · 5.466 ulasan (19 Oktober 2026)"
+        "4,2 / 5 · 5.472 ulasan (29 Oktober 2026)"
       ],
       [
         "Tiket & biaya terpisah",
@@ -188,7 +188,7 @@ export const content = {
       ]
     ],
     "sourceTitle": "Sumber dan batas informasi",
-    "sourceLead": "Lokasi, telepon, rating dan jam adalah snapshot Google Maps 19 Oktober 2026. Artikel Pemerintah Kota Tangerang 25 April 2025 mendukung konteks tema saja. Tautan penjual tiket bukan harga resmi yang telah diverifikasi; akun Instagram lama belum diverifikasi sebagai kanal operator.",
+    "sourceLead": "Lokasi, telepon, rating dan jam adalah snapshot Google Maps 29 Oktober 2026. Artikel Pemerintah Kota Tangerang 25 April 2025 mendukung konteks tema saja. Tautan penjual tiket bukan harga resmi yang telah diverifikasi; akun Instagram lama belum diverifikasi sebagai kanal operator.",
     "sourceLabels": [
       "Google Maps",
       "Artikel pemerintah · 2025",
@@ -342,7 +342,7 @@ export const content = {
     "heroLead": "Amsterdam Waterpark is a Dutch-city-themed waterpark at Villa Tomang Baru Square, Kuta Jaya. Use this guide to shape your visit, then confirm dynamic details before leaving.",
     "maps": "Open Google Maps",
     "plan": "Plan your visit",
-    "tagVerified": "MAP LOCATION · 19 OCTOBER 2026",
+    "tagVerified": "MAP LOCATION · 29 OCTOBER 2026",
     "tagDynamic": "DYNAMIC DETAILS · CHECK BEFORE YOU GO",
     "factTitle": "Core information, with clear limits.",
     "factLead": "Google Maps snapshot checked on 19 October 2026. This is not an operator site or official price list; individual facilities may have separate conditions and charges.",
@@ -357,15 +357,15 @@ export const content = {
       ],
       [
         "Telephone",
-        "+62 21 5924434 · Maps-listed number, 19 October 2026"
+        "+62 21 5924434 · Maps-listed number, 29 October 2026"
       ],
       [
         "Hours shown on the map",
-        "Daily 08:00–17:00 · snapshot dated 19 October 2026"
+        "Daily 08:00–17:00 · snapshot dated 29 October 2026"
       ],
       [
         "Map rating",
-        "4.3 / 5 · 5,466 reviews (19 October 2026)"
+        "4.2 / 5 · 5,472 reviews (29 October 2026)"
       ],
       [
         "Tickets & separate charges",
@@ -503,7 +503,7 @@ export const content = {
       ]
     ],
     "sourceTitle": "Sources and information limits",
-    "sourceLead": "Location, phone, rating and hours are a Google Maps snapshot dated 19 October 2026. The Tangerang City Government article of 25 April 2025 supports thematic context only. Ticket-reseller links are not verified official prices; the legacy Instagram account has not been verified as an operator channel.",
+    "sourceLead": "Location, phone, rating and hours are a Google Maps snapshot dated 29 October 2026. The Tangerang City Government article of 25 April 2025 supports thematic context only. Ticket-reseller links are not verified official prices; the legacy Instagram account has not been verified as an operator channel.",
     "sourceLabels": [
       "Google Maps",
       "Government article · 2025",

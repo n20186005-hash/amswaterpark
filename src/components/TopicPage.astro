@@ -1,0 +1,143 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../data/site";
+import { GROUP_LABELS, getTopic, type TopicContent } from "../data/topics";
+
+interface Props {
+  topic: TopicContent;
+}
+
+const { topic } = Astro.props;
+const domain = site.domain;
+const slug = topic.slug;
+const path = `/topik/${slug}/`;
+const canonical = `${domain}${path}`;
+const groupLabel = GROUP_LABELS[topic.group];
+const updatedIso = "2026-10-29";
+
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Beranda", item: `${domain}/` },
+    { "@type": "ListItem", position: 2, name: "Panduan Topik", item: `${domain}/topik/` },
+    { "@type": "ListItem", position: 3, name: topic.h1, item: canonical }
+  ]
+};
+
+const faqJson = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: topic.faqs.map(([q, a]) => ({
+    "@type": "Question",
+    name: q,
+    acceptedAnswer: { "@type": "Answer", text: a }
+  }))
+};
+
+const webPage = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: topic.h1,
+  description: topic.description,
+  url: canonical,
+  inLanguage: "id-ID",
+  dateModified: updatedIso,
+  isPartOf: { "@type": "WebSite", name: site.siteName.id, url: `${domain}/` },
+  breadcrumb
+};
+---
+
+<BaseLayout
+  lang="id"
+  title={topic.title}
+  description={topic.description}
+  path={path}
+  enAlternate={false}
+>
+  <article class="waterline">
+    <nav aria-label="Breadcrumb" class="max-w-3xl mx-auto px-4 pt-6 text-sm text-[#41627b]">
+      <a href={`${domain}/`} class="underline">Beranda</a>
+      <span class="px-2">›</span>
+      <a href={`${domain}/topik/`} class="underline">Panduan Topik</a>
+      <span class="px-2">›</span>
+      <span>{groupLabel}</span>
+    </nav>
+
+    <header class="max-w-3xl mx-auto px-4 pt-4 pb-2">
+      <p class="status mb-3">{groupLabel}</p>
+      <h1 class="font-display text-4xl leading-tight md:text-5xl text-[#0A3152]">{topic.h1}</h1>
+      <p class="lead mt-3 text-lg text-[#41627b]">{topic.lead}</p>
+    </header>
+
+    <div class="max-w-3xl mx-auto px-4 divide-y divide-[#d3e8f6]">
+      {
+        topic.sections.map((section) => (
+          <section class="py-6">
+            <h2 class="font-display text-2xl text-[#0B5EA8] mb-3">{section.heading}</h2>
+            {section.paragraphs?.map((p) => <p class="mb-3 leading-relaxed">{p}</p>)}
+            {section.bullets && (
+              <ul class="list-disc pl-6 space-y-1.5 mb-3 marker:text-[#0B5EA8]">
+                {section.bullets.map((b) => <li class="leading-relaxed">{b}</li>)}
+              </ul>
+            )}
+            {section.callout && (
+              <p class="callout bg-[#e8f7ff] border-l-4 border-[#0B5EA8] p-3 rounded text-sm text-[#0A3152]">
+                {section.callout}
+              </p>
+            )}
+          </section>
+        ))
+      }
+    </div>
+
+    <section class="max-w-3xl mx-auto px-4 py-6">
+      <h2 class="font-display text-2xl text-[#0B5EA8] mb-3">Pertanyaan umum</h2>
+      <div class="space-y-2">
+        {
+          topic.faqs.map(([q, a]) => (
+            <details class="bg-white border border-[#d3e8f6] rounded-lg p-3">
+              <summary class="font-semibold cursor-pointer">{q}</summary>
+              <p class="mt-2 leading-relaxed text-[#41627b]">{a}</p>
+            </details>
+          ))
+        }
+      </div>
+    </section>
+
+    {
+      topic.related.length > 0 && (
+        <section class="max-w-3xl mx-auto px-4 py-6">
+          <h2 class="font-display text-2xl text-[#0B5EA8] mb-3">Baca juga</h2>
+          <div class="grid gap-3 sm:grid-cols-2">
+            {topic.related.map((rel) => {
+              const t = getTopic(rel);
+              if (!t) return null;
+              return (
+                <a
+                  href={`${domain}/topik/${rel}/`}
+                  class="block bg-white border border-[#d3e8f6] rounded-lg p-3 hover:border-[#0B5EA8] transition"
+                >
+                  <p class="text-xs text-[#41627b]">{GROUP_LABELS[t.group]}</p>
+                  <p class="font-semibold text-[#0A3152]">{t.h1}</p>
+                </a>
+              );
+            })}
+          </div>
+        </section>
+      )
+    }
+
+    <section class="max-w-3xl mx-auto px-4 py-6 text-sm text-[#41627b]">
+      <p class="bg-[#e8f7ff] border-l-4 border-[#F47A36] p-3 rounded">
+        {site.siteName.id} adalah panduan wisata independen. Situs ini bukan situs resmi pengelola
+        Amsterdam Waterpark. Informasi harga, jam, fasilitas, dan tempat di sekitar berasal dari sumber
+        publik/pihak ketiga dan perlu diverifikasi ulang di lokasi. Terakhir diperbarui {topic.updated}.
+      </p>
+    </section>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify(webPage)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqJson)} />
+</BaseLayout>

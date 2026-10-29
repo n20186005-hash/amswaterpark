@@ -1,0 +1,39 @@
+---
+import { site } from "../data/site";
+import { TOPICS, GROUP_LABELS, GROUP_ORDER } from "../data/topics";
+
+const domain = site.domain;
+---
+
+<section class="px-5 py-16 lg:px-8 bg-skywash">
+  <div class="mx-auto max-w-7xl">
+    <p class="text-[.68rem] font-extrabold tracking-[.18em] text-canal">PANDUAN TOPIK</p>
+    <h2 class="mt-3 font-display text-4xl text-ink md:text-5xl">Rencanakan kunjungan dengan panduan lengkap</h2>
+    <p class="mt-4 max-w-3xl text-lg leading-8 text-ink/70">
+      Panduan independen tentang tiket, jam buka, fasilitas, transportasi, kuliner sekitar, wisata
+      keluarga, dan itinerary.
+      <a href={`${domain}/topik/`} class="font-bold text-canal no-underline">Lihat semua panduan topik ↗</a>
+    </p>
+    <div class="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {
+        GROUP_ORDER.map((group) => {
+          const items = TOPICS.filter((t) => t.group === group);
+          return (
+            <div>
+              <h3 class="font-display text-2xl text-canal">{GROUP_LABELS[group]}</h3>
+              <ul class="mt-3 space-y-2">
+                {items.map((t) => (
+                  <li>
+                    <a href={`${domain}/topik/${t.slug}/`} class="text-sm font-bold text-ink no-underline hover:text-canal">
+                      {t.h1}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>

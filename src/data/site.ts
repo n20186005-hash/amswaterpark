@@ -7,8 +7,8 @@ export const site = {
   phone: "+62 21 5924434",
   mapsUrl: "https://maps.app.goo.gl/4hNdrBTz146SetbF9",
   mapEmbedUrl: "https://www.google.com/maps?q=Amsterdam+Waterpark,+Villa+Tomang+Baru+Square,+Jl.+Villa+Tomang+Baru+No.1,+Kuta+Jaya,+Pasar+Kemis,+Tangerang,+Banten+15561,+Indonesia&z=15&output=embed&hl=id",
-  reviewRating: 4.3,
-  reviewCount: 5466,
+  reviewRating: 4.2,
+  reviewCount: 5472,
   gaId: "G-HXM22WWPKP",
   sources: {
     maps: "https://maps.app.goo.gl/4hNdrBTz146SetbF9",

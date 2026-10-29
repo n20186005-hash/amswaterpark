@@ -1,0 +1,57 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { site } from "../../data/site";
+import { TOPICS, GROUP_LABELS, GROUP_ORDER } from "../../data/topics";
+
+const domain = site.domain;
+const path = "/topik/";
+const title = "Panduan Topik Amsterdam Waterpark: Tiket, Wahana, Transportasi & Sekitar";
+const description =
+  "Panduan lengkap Amsterdam Waterpark Tangerang: harga tiket, jam buka, wahana, transportasi, kuliner sekitar, wisata keluarga, dan itinerary.";
+---
+
+<BaseLayout lang="id" title={title} description={description} path={path} enAlternate={false}>
+  <main class="waterline">
+    <header class="max-w-4xl mx-auto px-4 pt-10 pb-2">
+      <p class="status mb-3">Panduan Topik</p>
+      <h1 class="font-display text-4xl md:text-5xl text-[#0A3152]">Panduan Amsterdam Waterpark</h1>
+      <p class="lead mt-3 text-lg text-[#41627b]">
+        Kumpulan panduan independen untuk merencanakan kunjungan ke Amsterdam Waterpark di Pasar Kemis,
+        Tangerang: tiket, jam buka, fasilitas, transportasi, kuliner sekitar, wisata keluarga, dan itinerary.
+      </p>
+    </header>
+
+    <div class="max-w-4xl mx-auto px-4 py-6 space-y-8">
+      {
+        GROUP_ORDER.map((group) => {
+          const items = TOPICS.filter((t) => t.group === group);
+          if (items.length === 0) return null;
+          return (
+            <section>
+              <h2 class="font-display text-2xl text-[#0B5EA8] mb-3">{GROUP_LABELS[group]}</h2>
+              <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {items.map((t) => (
+                  <a
+                    href={`${domain}/topik/${t.slug}/`}
+                    class="block bg-white border border-[#d3e8f6] rounded-lg p-3 hover:border-[#0B5EA8] transition"
+                  >
+                    <p class="text-xs text-[#41627b]">Diperbarui {t.updated}</p>
+                    <p class="font-semibold text-[#0A3152] leading-snug">{t.h1}</p>
+                  </a>
+                ))}
+              </div>
+            </section>
+          );
+        })
+      }
+    </div>
+
+    <section class="max-w-4xl mx-auto px-4 py-6 text-sm text-[#41627b]">
+      <p class="bg-[#e8f7ff] border-l-4 border-[#F47A36] p-3 rounded">
+        {site.siteName.id} adalah panduan wisata independen dan bukan situs resmi pengelola Amsterdam
+        Waterpark. Informasi di halaman ini berasal dari sumber publik/pihak ketiga dan perlu diverifikasi
+        ulang di lokasi.
+      </p>
+    </section>
+  </main>
+</BaseLayout>
